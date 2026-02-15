@@ -85,6 +85,9 @@
                         <a class="nav-link active" href="industries.html">Industries</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link nav-shop-highlight" href="shop.html"><i class="fas fa-shopping-cart me-1"></i> Shop</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
                 </ul>
@@ -95,7 +98,7 @@
     <!-- ============================================
     Page Hero Section
     ============================================ -->
-    <section class="page-hero" style="background: linear-gradient(135deg, rgba(10, 38, 71, 0.92) 0%, rgba(20, 66, 114, 0.88) 100%), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
+    <section class="page-hero page-hero-industries">
         <div class="container">
             <h1>Industries We Serve</h1>
             <p>Delivering specialized solutions across diverse industrial sectors with precision and expertise.</p>
@@ -444,6 +447,20 @@
     </section>
 
     <!-- ============================================
+    Shop Promo Banner
+    ============================================ -->
+    <section class="shop-promo-banner">
+        <div class="container">
+            <div class="shop-promo-inner">
+                <div class="promo-icon"><i class="fas fa-shopping-bag"></i></div>
+                <h2>Looking for Our Products?</h2>
+                <p>Explore our online shop for marine, engineering, and safety products — ready to order.</p>
+                <a href="shop.html" class="btn-shop-cta">Visit Shop <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
     Footer Section
     ============================================ -->
     <footer class="footer">
@@ -533,10 +550,11 @@
     
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>
-    
-    <!-- Update Copyright Year -->
-    <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+
+    <!-- UI Effects -->
+    <script src="js/ui.js"></script>
+
+    <!-- HAMI Bot Chat Widget -->
+    <script src="js/chat.js"></script>
 </body>
 </html>

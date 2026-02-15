@@ -85,6 +85,9 @@
                         <a class="nav-link" href="industries.html">Industries</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link nav-shop-highlight" href="shop.html"><i class="fas fa-shopping-cart me-1"></i> Shop</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
                 </ul>
@@ -95,7 +98,7 @@
     <!-- ============================================
     Page Hero Section
     ============================================ -->
-    <section class="page-hero" style="background: linear-gradient(135deg, rgba(10, 38, 71, 0.92) 0%, rgba(20, 66, 114, 0.88) 100%), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
+    <section class="page-hero page-hero-about">
         <div class="container">
             <h1>About Us</h1>
             <p>Discover our journey, values, and commitment to excellence in engineering and marine solutions.</p>
@@ -169,21 +172,21 @@
                 <div class="vm-card mission animate-on-scroll animate-delay-2">
                     <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
                     <p>To provide comprehensive project sourcing solutions that exceed client expectations through:</p>
-                    <ul style="list-style: none; padding: 0; margin-top: 1rem;">
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 10px;">
-                            <i class="fas fa-check text-accent" style="margin-top: 5px;"></i>
+                    <ul class="mission-list">
+                        <li>
+                            <i class="fas fa-check text-accent"></i>
                             <span>Sourcing quality products from trusted global manufacturers</span>
                         </li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 10px;">
-                            <i class="fas fa-check text-accent" style="margin-top: 5px;"></i>
+                        <li>
+                            <i class="fas fa-check text-accent"></i>
                             <span>Delivering competitive pricing without compromising quality</span>
                         </li>
-                        <li style="margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 10px;">
-                            <i class="fas fa-check text-accent" style="margin-top: 5px;"></i>
+                        <li>
+                            <i class="fas fa-check text-accent"></i>
                             <span>Ensuring timely delivery through efficient logistics management</span>
                         </li>
-                        <li style="display: flex; align-items: flex-start; gap: 10px;">
-                            <i class="fas fa-check text-accent" style="margin-top: 5px;"></i>
+                        <li>
+                            <i class="fas fa-check text-accent"></i>
                             <span>Building lasting partnerships based on trust and mutual growth</span>
                         </li>
                     </ul>
@@ -248,32 +251,32 @@
                     
                     <div class="mt-4">
                         <div class="d-flex align-items-start gap-3 mb-4">
-                            <div style="width: 50px; height: 50px; background: var(--gradient-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                <span style="color: white; font-weight: 700;">1</span>
+                            <div class="step-circle">
+                                <span>1</span>
                             </div>
                             <div>
                                 <h5 class="mb-2">Global Sourcing</h5>
-                                <p class="mb-0" style="color: var(--steel-grey);">Leveraging our worldwide network of manufacturers and suppliers to source the right products at competitive prices.</p>
+                                <p class="mb-0 step-text">Leveraging our worldwide network of manufacturers and suppliers to source the right products at competitive prices.</p>
                             </div>
                         </div>
                         
                         <div class="d-flex align-items-start gap-3 mb-4">
-                            <div style="width: 50px; height: 50px; background: var(--gradient-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                <span style="color: white; font-weight: 700;">2</span>
+                            <div class="step-circle">
+                                <span>2</span>
                             </div>
                             <div>
                                 <h5 class="mb-2">Quality Assurance</h5>
-                                <p class="mb-0" style="color: var(--steel-grey);">Rigorous quality control processes ensure all products meet international standards and client specifications.</p>
+                                <p class="mb-0 step-text">Rigorous quality control processes ensure all products meet international standards and client specifications.</p>
                             </div>
                         </div>
                         
                         <div class="d-flex align-items-start gap-3">
-                            <div style="width: 50px; height: 50px; background: var(--gradient-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                <span style="color: white; font-weight: 700;">3</span>
+                            <div class="step-circle">
+                                <span>3</span>
                             </div>
                             <div>
                                 <h5 class="mb-2">Logistics Excellence</h5>
-                                <p class="mb-0" style="color: var(--steel-grey);">Efficient supply chain management ensuring timely delivery with complete documentation and customs support.</p>
+                                <p class="mb-0 step-text">Efficient supply chain management ensuring timely delivery with complete documentation and customs support.</p>
                             </div>
                         </div>
                     </div>
@@ -386,6 +389,20 @@
     </section>
 
     <!-- ============================================
+    Shop Promo Banner
+    ============================================ -->
+    <section class="shop-promo-banner">
+        <div class="container">
+            <div class="shop-promo-inner">
+                <div class="promo-icon"><i class="fas fa-shopping-bag"></i></div>
+                <h2>Looking for Our Products?</h2>
+                <p>Explore our online shop for marine, engineering, and safety products — ready to order.</p>
+                <a href="shop.html" class="btn-shop-cta">Visit Shop <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
     Footer Section
     ============================================ -->
     <footer class="footer">
@@ -475,10 +492,11 @@
     
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>
-    
-    <!-- Update Copyright Year -->
-    <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+
+    <!-- UI Effects -->
+    <script src="js/ui.js"></script>
+
+    <!-- HAMI Bot Chat Widget -->
+    <script src="js/chat.js"></script>
 </body>
 </html>

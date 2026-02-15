@@ -85,6 +85,9 @@
                         <a class="nav-link" href="industries.html">Industries</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link nav-shop-highlight" href="shop.html"><i class="fas fa-shopping-cart me-1"></i> Shop</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="contact.html">Contact Us</a>
                     </li>
                 </ul>
@@ -95,7 +98,7 @@
     <!-- ============================================
     Page Hero Section
     ============================================ -->
-    <section class="page-hero" style="background: linear-gradient(135deg, rgba(10, 38, 71, 0.92) 0%, rgba(20, 66, 114, 0.88) 100%), url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
+    <section class="page-hero page-hero-contact">
         <div class="container">
             <h1>Contact Us</h1>
             <p>Get in touch with our team for inquiries, quotes, and support.</p>
@@ -120,7 +123,7 @@
                 <div class="col-lg-5">
                     <div class="contact-info-card animate-on-scroll">
                         <h3>Get in Touch</h3>
-                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">We're here to help with your sourcing and procurement needs. Reach out to us through any of the following channels.</p>
+                        <p class="contact-intro-text">We're here to help with your sourcing and procurement needs. Reach out to us through any of the following channels.</p>
                         
                         <!-- Address -->
                         <div class="contact-info-item">
@@ -140,7 +143,7 @@
                             </div>
                             <div>
                                 <h5>Phone Number</h5>
-                                <p><a href="tel:+97165484001" style="color: inherit;">+971 6 5484001</a></p>
+                                <p><a href="tel:+97165484001">+971 6 5484001</a></p>
                             </div>
                         </div>
                         
@@ -151,7 +154,7 @@
                             </div>
                             <div>
                                 <h5>Email Address</h5>
-                                <p><a href="mailto:info@hamillc.com" style="color: inherit;">info@hamillc.com</a></p>
+                                <p><a href="mailto:info@hamillc.com">info@hamillc.com</a></p>
                             </div>
                         </div>
                         
@@ -167,8 +170,8 @@
                         </div>
                         
                         <!-- Social Links -->
-                        <div class="mt-4 pt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
-                            <h5 style="color: white; margin-bottom: 1rem;">Follow Us</h5>
+                        <div class="mt-4 pt-4 contact-social-divider">
+                            <h5 class="contact-social-heading">Follow Us</h5>
                             <div class="footer-social">
                                 <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -272,10 +275,7 @@
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115545.36095266989!2d55.35116392579!3d25.343458095855656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f5f5f5f5f5f%3A0x5f5f5f5f5f5f5f5f!2sSharjah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
                     width="100%" 
                     height="450" 
-                    style="border:0;" 
                     allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
                     title="HAMI LLC Location - Sharjah, UAE"
                     aria-label="Map showing HAMI LLC location in Sharjah, UAE">
                 </iframe>
@@ -292,8 +292,8 @@
                 <!-- Quick Contact Card 1 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card text-center animate-on-scroll">
-                        <div class="icon-box" style="background: var(--gradient-orange);">
-                            <i class="fas fa-phone" style="color: white;"></i>
+                        <div class="icon-box icon-box-accent">
+                            <i class="fas fa-phone"></i>
                         </div>
                         <h4>Call Us</h4>
                         <p>Speak directly with our team for immediate assistance and inquiries.</p>
@@ -306,8 +306,8 @@
                 <!-- Quick Contact Card 2 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card text-center animate-on-scroll animate-delay-1">
-                        <div class="icon-box" style="background: var(--gradient-orange);">
-                            <i class="fas fa-envelope" style="color: white;"></i>
+                        <div class="icon-box icon-box-accent">
+                            <i class="fas fa-envelope"></i>
                         </div>
                         <h4>Email Us</h4>
                         <p>Send us your detailed requirements and we'll respond promptly.</p>
@@ -320,8 +320,8 @@
                 <!-- Quick Contact Card 3 -->
                 <div class="col-lg-4 col-md-12">
                     <div class="service-card text-center animate-on-scroll animate-delay-2">
-                        <div class="icon-box" style="background: var(--gradient-orange);">
-                            <i class="fas fa-file-alt" style="color: white;"></i>
+                        <div class="icon-box icon-box-accent">
+                            <i class="fas fa-file-alt"></i>
                         </div>
                         <h4>Request Quote</h4>
                         <p>Get a customized quote for your specific product requirements.</p>
@@ -423,6 +423,20 @@
     </section>
 
     <!-- ============================================
+    Shop Promo Banner
+    ============================================ -->
+    <section class="shop-promo-banner">
+        <div class="container">
+            <div class="shop-promo-inner">
+                <div class="promo-icon"><i class="fas fa-shopping-bag"></i></div>
+                <h2>Looking for Our Products?</h2>
+                <p>Explore our online shop for marine, engineering, and safety products — ready to order.</p>
+                <a href="shop.html" class="btn-shop-cta">Visit Shop <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
     Footer Section
     ============================================ -->
     <footer class="footer">
@@ -512,10 +526,11 @@
     
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>
-    
-    <!-- Update Copyright Year -->
-    <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+
+    <!-- UI Effects -->
+    <script src="js/ui.js"></script>
+
+    <!-- HAMI Bot Chat Widget -->
+    <script src="js/chat.js"></script>
 </body>
 </html>
