@@ -1,0 +1,968 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================
+    Al Hamidiya General Trading LLC (HAMI) - Blog Page
+    Hotel And Marine Innovations â€” Insights & News
+    ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Blog | Al Hamidiya General Trading LLC - Marine, Hotel & Engineering Insights UAE</title>
+    <meta name="description" content="Read the latest insights on marine engineering, hospitality equipment, UAE trade, offshore supply chain, and industrial procurement from Al Hamidiya General Trading LLC (HAMI).">
+    <meta name="keywords" content="marine engineering blog, UAE trade insights, hospitality equipment trends, offshore supply chain, industrial procurement UAE, Sharjah trading company blog, HAMI LLC blog, hotel marine innovations">
+    <meta name="author" content="Al Hamidiya General Trading LLC">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog | Al Hamidiya General Trading LLC - Marine & Hotel Industry Insights">
+    <meta property="og:description" content="Expert insights on marine supplies, hospitality equipment, and global trade from Sharjah, UAE.">
+    <meta property="og:url" content="https://www.hamillc.com/blog.html">
+    <meta property="og:site_name" content="HAMI LLC">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.hamillc.com/blog.html">
+    
+    <!-- Structured Data for Blog -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "HAMI LLC Blog â€” Hotel And Marine Innovations",
+        "description": "Industry insights and news from Al Hamidiya General Trading LLC, covering marine engineering, hospitality equipment, and UAE trade.",
+        "url": "https://www.hamillc.com/blog.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Al Hamidiya General Trading LLC",
+            "url": "https://www.hamillc.com"
+        }
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Google Fonts - Inter & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Blog-specific Styles -->
+    <style>
+        /* â”€â”€â”€ Blog Hero â”€â”€â”€ */
+        .page-hero-blog {
+            background: linear-gradient(135deg, rgba(10,38,71,0.92) 0%, rgba(20,66,114,0.88) 50%, rgba(232,93,4,0.75) 100%),
+                         url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        }
+
+        /* â”€â”€â”€ Blog Grid â”€â”€â”€ */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+
+        /* â”€â”€â”€ Blog Card â”€â”€â”€ */
+        .blog-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .blog-card-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .blog-card:hover .blog-card-image img {
+            transform: scale(1.08);
+        }
+
+        .blog-card-category {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--gradient-orange);
+            color: var(--white);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        .blog-card-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .blog-card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .blog-card-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--navy-blue);
+            margin-bottom: 12px;
+            line-height: 1.4;
+            transition: color var(--transition-fast);
+        }
+
+        .blog-card:hover .blog-card-title { color: var(--orange-accent); }
+
+        .blog-card-excerpt {
+            color: var(--steel-grey);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            flex: 1;
+            margin-bottom: 16px;
+        }
+
+        .blog-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid var(--light-grey);
+            padding-top: 16px;
+        }
+
+        .blog-read-more {
+            color: var(--orange-accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap var(--transition-fast);
+        }
+
+        .blog-read-more:hover { gap: 12px; color: var(--orange-dark); }
+
+        .blog-share-links {
+            display: flex;
+            gap: 8px;
+        }
+
+        .blog-share-links a {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--off-white);
+            color: var(--steel-grey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+        }
+
+        .blog-share-links a:hover {
+            background: var(--navy-blue);
+            color: var(--white);
+        }
+
+        /* â”€â”€â”€ Featured Blog (first post) â”€â”€â”€ */
+        .blog-featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .blog-featured .blog-card-image { height: 100%; min-height: 320px; }
+        .blog-featured .blog-card-body { padding: 32px; justify-content: center; }
+        .blog-featured .blog-card-title { font-size: 1.5rem; }
+        .blog-featured .blog-card-excerpt { font-size: 1rem; }
+
+        @media (max-width: 768px) {
+            .blog-featured { grid-template-columns: 1fr; }
+            .blog-featured .blog-card-image { min-height: 220px; }
+        }
+
+        /* â”€â”€â”€ Blog Tags Cloud â”€â”€â”€ */
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .blog-tag {
+            padding: 6px 16px;
+            border: 2px solid var(--light-grey);
+            border-radius: 20px;
+            font-size: 0.82rem;
+            color: var(--steel-grey);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all var(--transition-fast);
+        }
+
+        .blog-tag:hover {
+            border-color: var(--orange-accent);
+            color: var(--orange-accent);
+            background: rgba(232, 93, 4, 0.05);
+        }
+
+        /* â”€â”€â”€ Newsletter / CTA â”€â”€â”€ */
+        .blog-newsletter {
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            padding: 48px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .blog-newsletter h3 { color: var(--white); margin-bottom: 8px; }
+        .blog-newsletter p { color: rgba(255,255,255,0.8); margin-bottom: 24px; }
+
+        .blog-newsletter .newsletter-form {
+            display: flex;
+            max-width: 480px;
+            margin: 0 auto;
+            gap: 8px;
+        }
+
+        .blog-newsletter .newsletter-form input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 30px;
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        .blog-newsletter .newsletter-form input::placeholder { color: rgba(255,255,255,0.5); }
+        .blog-newsletter .newsletter-form input:focus { outline: none; border-color: var(--orange-accent); }
+
+        .blog-newsletter .newsletter-form button {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 30px;
+            background: var(--gradient-orange);
+            color: var(--white);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+        }
+
+        .blog-newsletter .newsletter-form button:hover { transform: scale(1.05); }
+
+        @media (max-width: 576px) {
+            .blog-newsletter .newsletter-form { flex-direction: column; }
+            .blog-newsletter { padding: 32px 20px; }
+        }
+
+        /* â”€â”€â”€ UAE Decorative Elements â”€â”€â”€ */
+        .uae-accent-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #00732f 33%, #fff 33%, #fff 50%, #000 50%, #000 67%, #ff0000 67%);
+            border-radius: 2px;
+            margin: 0 auto 24px;
+        }
+
+        /* Blog floating decoration */
+        .blog-decoration {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(232,93,4,0.15);
+            border-radius: 12px;
+            transform: rotate(45deg);
+            z-index: 0;
+        }
+
+        /* â”€â”€â”€ Blog Full Content (expanded) â”€â”€â”€ */
+        .blog-full-content {
+            color: var(--steel-grey);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .blog-full-content h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--navy-blue);
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        .blog-full-content p {
+            margin-bottom: 12px;
+        }
+
+        .blog-read-more.expanded {
+            color: var(--navy-blue);
+        }
+
+        .blog-read-more.expanded i {
+            transform: rotate(90deg);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+    Preloader
+    ============================================ -->
+    <div class="preloader" aria-label="Loading">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- ============================================
+    Navigation Bar
+    ============================================ -->
+    <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation">
+        <div class="container">
+            <!-- Logo / Brand -->
+            <a class="navbar-brand" href="index.html" aria-label="Al Hamidiya General Trading LLC Home">
+                <img src="images/HAMI_Logo.jpeg" alt="Al Hamidiya General Trading LLC Logo" class="navbar-logo">
+                <span class="brand-text">
+                    <span class="brand-name">Al Hamidiya</span>
+                    <span class="brand-subtitle">General Trading LLC</span>
+                </span>
+            </a>
+            
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="industries.html">Industries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-shop-highlight" href="shop.html"><i class="fas fa-shopping-cart me-1"></i> Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+    Page Hero Section
+    ============================================ -->
+    <section class="page-hero page-hero-blog">
+        <div class="container">
+            <h1>HAMI Blog</h1>
+            <p>Insights, news, and industry expertise from Hotel And Marine Innovations</p>
+            
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- ============================================
+    Tags / Filter Section
+    ============================================ -->
+    <section class="py-4 section-light">
+        <div class="container">
+            <div class="blog-tags" id="blogTags">
+                <a href="#" class="blog-tag active-tag" data-filter="all">All Posts</a>
+                <a href="#" class="blog-tag" data-filter="marine">Marine & Offshore</a>
+                <a href="#" class="blog-tag" data-filter="hospitality">Hospitality</a>
+                <a href="#" class="blog-tag" data-filter="uae">UAE & Trade</a>
+                <a href="#" class="blog-tag" data-filter="engineering">Engineering</a>
+                <a href="#" class="blog-tag" data-filter="sustainability">Sustainability</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    Blog Posts Grid
+    ============================================ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="blog-grid" id="blogGrid">
+
+                <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                     FEATURED POST â€” Blog Article 1
+                     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+                <article class="blog-card blog-featured animate-on-scroll" data-category="uae" itemscope itemtype="https://schema.org/BlogPosting">
+                    <div class="blog-card-image">
+                        <span class="blog-card-category">UAE & Trade</span>
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80" alt="Dubai skyline representing UAE's trade dominance" loading="lazy" itemprop="image">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Feb 10, 2026</span>
+                            <span><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <h3 class="blog-card-title" itemprop="headline">Why the UAE Remains the World's Preferred Trade Hub for Marine and Hospitality Procurement</h3>
+                        <p class="blog-card-excerpt" itemprop="description">The UAE's strategic geographic position, world-class port infrastructure, and business-friendly regulations continue to make it the go-to destination for marine equipment sourcing and hospitality procurement. With Jebel Ali Port ranked among the top 10 busiest ports globally and Sharjah's free zones offering unmatched trade advantages, companies like HAMI leverage this ecosystem to deliver quality products across 30+ countries.</p>
+                        <div class="blog-full-content">
+                            <h4>A Strategic Crossroads for Global Trade</h4>
+                            <p>The United Arab Emirates sits at the intersection of three continents â€” Asia, Europe, and Africa â€” making it an unparalleled hub for international trade. For companies in the marine and hospitality sectors, this geographic advantage translates into faster delivery times, lower shipping costs, and access to a vast supplier network spanning the globe.</p>
+                            <h4>World-Class Port Infrastructure</h4>
+                            <p>Jebel Ali Port, operated by DP World, is the largest man-made harbour in the world and consistently ranks among the top 10 busiest container ports globally. It handles over 15 million TEUs annually, connecting the UAE to more than 180 direct port calls weekly. For marine equipment procurement, this means access to direct shipping routes to virtually every maritime nation on earth.</p>
+                            <p>Sharjah's own ports â€” including Khorfakkan on the Indian Ocean side â€” provide additional logistics flexibility. Companies like HAMI leverage these dual-coast facilities to expedite deliveries for urgent vessel supplies and hospitality equipment orders.</p>
+                            <h4>Free Zones: A Business Accelerator</h4>
+                            <p>The UAE's 40+ free zones offer 100% foreign ownership, zero income tax, zero customs duty on re-exports, and simplified incorporation processes. The Hamriyah Free Zone in Sharjah specifically caters to industrial and maritime companies, providing warehousing, manufacturing, and trading licenses that enable rapid scale-up of procurement operations.</p>
+                            <h4>How HAMI Leverages This Ecosystem</h4>
+                            <p>As a Sharjah-based general trading company, HAMI â€” Al Hamidiya General Trading LLC â€” operates at the heart of this ecosystem. Our procurement team sources marine spare parts, hotel kitchen equipment, safety gear, and engineering supplies from top manufacturers in Europe, Asia, and the Americas, consolidating shipments through UAE ports for delivery to clients across the Middle East, Africa, and South Asia.</p>
+                            <p>Our relationships with over 200 global manufacturers, combined with the UAE's trade-friendly infrastructure, allow us to offer competitive pricing, fast turnaround, and reliable quality assurance â€” the three pillars that keep international buyers choosing the UAE for their procurement needs.</p>
+                            <h4>Looking Ahead</h4>
+                            <p>With the UAE government investing heavily in digital trade platforms, smart logistics, and sustainable shipping initiatives, the country's position as the world's preferred trade hub will only strengthen in the coming decade. HAMI is committed to evolving with this landscape, incorporating digital procurement tools and sustainable sourcing practices to continue serving our clients at the highest level.</p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <a href="#" class="blog-read-more" data-expanded="false">Read Full Article <i class="fas fa-arrow-right"></i></a>
+                            <div class="blog-share-links">
+                                <a href="#" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://wa.me/971501722409?text=Check%20out%20this%20article%20on%20UAE%20trade%20from%20HAMI%20LLC" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                     Blog Article 2
+                     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+                <article class="blog-card animate-on-scroll" data-category="marine" itemscope itemtype="https://schema.org/BlogPosting">
+                    <div class="blog-card-image">
+                        <span class="blog-card-category">Marine</span>
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="Marine vessel at sea requiring spare parts" loading="lazy" itemprop="image">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Jan 28, 2026</span>
+                            <span><i class="fas fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3 class="blog-card-title" itemprop="headline">Top 10 Critical Spare Parts Every Vessel Owner Should Keep in Stock</h3>
+                        <p class="blog-card-excerpt" itemprop="description">Unplanned downtime can cost vessel operators thousands of dollars per day. From turbocharger assemblies to marine pumps, we explore the essential spare parts that every ship manager should maintain in inventory.</p>
+                        <div class="blog-full-content">
+                            <h4>The True Cost of Downtime</h4>
+                            <p>For a mid-size cargo vessel, unplanned downtime can cost between $10,000 and $30,000 per day when you factor in port charges, crew costs, charter penalties, and lost revenue. Having the right spare parts on board or in a nearby warehouse can reduce repair turnaround from weeks to days â€” or even hours.</p>
+                            <h4>The Essential Spare Parts List</h4>
+                            <p><strong>1. Turbocharger Components</strong> â€” Cartridge assemblies, bearings, and nozzle rings for the main and auxiliary engines are among the most critical items. Turbocharger failure can reduce engine output by 30-50%.</p>
+                            <p><strong>2. Fuel Injection Pumps & Nozzles</strong> â€” These wear components directly affect engine performance and fuel efficiency. Keeping a set of tested spares ensures quick replacement during routine maintenance.</p>
+                            <p><strong>3. Marine Pumps (Centrifugal & Gear)</strong> â€” Cooling water pumps, lube oil pumps, and bilge pumps are essential for vessel safety. Impeller kits and mechanical seals should always be in stock.</p>
+                            <p><strong>4. Gasket Sets & O-Rings</strong> â€” Often overlooked, these sealing components are needed for virtually every maintenance task. A comprehensive gasket kit for the main engine can save days of waiting.</p>
+                            <p><strong>5. Filters (Oil, Fuel, Air)</strong> â€” Regular filter changes are the first line of defense for engine longevity. Stock a minimum 6-month supply based on your PM schedule.</p>
+                            <p><strong>6. Bearings (Main & Connecting Rod)</strong> â€” Engine bearings are high-wear items. Having them pre-ordered and classified by size ensures readiness for drydock or emergency repairs.</p>
+                            <p><strong>7. Electrical Components</strong> â€” Alternator parts, voltage regulators, and critical relay switches can prevent blackout situations on board.</p>
+                            <p><strong>8. Valves (Safety, Relief, Gate)</strong> â€” Valve failures in the cooling or steam systems can lead to catastrophic damage. Keep spare valves for each critical system.</p>
+                            <p><strong>9. Stern Tube Seals</strong> â€” A stern tube seal failure can flood the engine room. These are long-lead items that should always be available in your spares inventory.</p>
+                            <p><strong>10. Cathodic Protection Anodes</strong> â€” Zinc and aluminum anodes for hull protection need regular replacement. HAMI stocks a wide range of anode types for different vessel configurations.</p>
+                            <h4>HAMI's Marine Spares Advantage</h4>
+                            <p>With over 1,500+ marine products in our catalog and established relationships with OEM manufacturers worldwide, HAMI provides rapid sourcing of critical spare parts. Our Sharjah-based warehouse maintains stock of fast-moving items, and our procurement team can source specialized parts with competitive lead times. Contact us to set up a standing spares management agreement for your fleet.</p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <a href="#" class="blog-read-more" data-expanded="false">Read More <i class="fas fa-arrow-right"></i></a>
+                            <div class="blog-share-links">
+                                <a href="#" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://wa.me/971501722409?text=I%20read%20your%20article%20on%20vessel%20spare%20parts" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                     Blog Article 3
+                     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+                <article class="blog-card animate-on-scroll" data-category="hospitality" itemscope itemtype="https://schema.org/BlogPosting">
+                    <div class="blog-card-image">
+                        <span class="blog-card-category">Hospitality</span>
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Luxury hotel resort pool with equipment" loading="lazy" itemprop="image">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Jan 15, 2026</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3 class="blog-card-title" itemprop="headline">Hotel Equipment Trends 2026: What UAE's Luxury Hospitality Sector is Investing In</h3>
+                        <p class="blog-card-excerpt" itemprop="description">As the UAE hosts millions of tourists annually and prepares for mega-events, hotel operators are upgrading their infrastructure. From smart kitchen automation to energy-efficient HVAC, discover the equipment trends shaping the UAE's hospitality landscape.</p>
+                        <div class="blog-full-content">
+                            <h4>A Booming Hospitality Market</h4>
+                            <p>The UAE welcomed over 28 million international visitors in 2025, with Dubai alone hosting 18.7 million tourists. This relentless growth drives constant demand for new hotels, resort refurbishments, and equipment upgrades. The H in HAMI stands for <strong>Hotel</strong>, and our hospitality division has been at the forefront of supplying this dynamic market.</p>
+                            <h4>Smart Kitchen Automation</h4>
+                            <p>The biggest investment trend in 2026 is smart kitchen technology. Hotels are adopting IoT-connected cooking equipment that monitors temperature, tracks energy usage, and alerts staff to maintenance needs. Combi ovens with AI-powered cooking programs, automated blast chillers, and robotic food prep stations are becoming standard in 5-star hotel kitchens. HAMI partners with leading European and Japanese kitchen equipment manufacturers to bring these innovations to the GCC market.</p>
+                            <h4>Energy-Efficient HVAC Systems</h4>
+                            <p>With UAE's extreme summer temperatures, HVAC accounts for up to 60% of a hotel's energy consumption. The latest variable refrigerant flow (VRF) systems, district cooling connections, and AI-controlled building management systems are helping hotels reduce their energy bills by 25-40%. Our engineering team specifies and procures these systems for hotel projects across the region.</p>
+                            <h4>Next-Gen Pool & Water Treatment</h4>
+                            <p>Resort pools are getting smarter too. UV and ozone-based water treatment systems that reduce chlorine usage, automated pH balancing systems, and energy-efficient variable-speed pumps are the new standard. HAMI supplies complete pool equipment packages from leading manufacturers including filtration systems, heat pumps, and chemical dosing equipment.</p>
+                            <h4>Sustainable & Guest-Centric Design</h4>
+                            <p>Sustainability is no longer optional â€” it's a brand differentiator. Hotels are investing in LED lighting retrofits, smart room controls, water recycling systems, and eco-friendly laundry equipment. HAMI's product catalog includes a growing range of sustainable hospitality solutions that help hotels achieve Green Globe and LEED certifications.</p>
+                            <h4>Partner with HAMI for Your Next Hotel Project</h4>
+                            <p>Whether you're building a new resort or upgrading existing facilities, HAMI's Hotel division offers end-to-end procurement support â€” from equipment specification and vendor selection to delivery and installation coordination. Contact us for a consultation.</p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <a href="#" class="blog-read-more" data-expanded="false">Read More <i class="fas fa-arrow-right"></i></a>
+                            <div class="blog-share-links">
+                                <a href="#" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://wa.me/971501722409?text=I%20read%20your%20hotel%20equipment%20trends%20article" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                     Blog Article 4
+                     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+                <article class="blog-card animate-on-scroll" data-category="engineering" itemscope itemtype="https://schema.org/BlogPosting">
+                    <div class="blog-card-image">
+                        <span class="blog-card-category">Engineering</span>
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Industrial engineering and technical supplies" loading="lazy" itemprop="image">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Jan 5, 2026</span>
+                            <span><i class="fas fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3 class="blog-card-title" itemprop="headline">The Complete Guide to Engineering Procurement in the Middle East</h3>
+                        <p class="blog-card-excerpt" itemprop="description">Sourcing engineering and technical equipment in the Middle East comes with unique challenges â€” from compliance with regional standards to managing complex logistics across GCC countries.</p>
+                        <div class="blog-full-content">
+                            <h4>Understanding the GCC Procurement Landscape</h4>
+                            <p>The Middle East's engineering sector is booming, driven by infrastructure mega-projects, energy sector investments, and industrial diversification programs. However, procurement in this region requires navigating a complex web of local regulations, import duties, certification requirements, and cultural business practices that differ significantly from Western markets.</p>
+                            <h4>Vendor Qualification & Pre-Approval</h4>
+                            <p>Most large-scale projects in the GCC require vendors to go through a rigorous pre-qualification process. This includes submitting company profiles, financial statements, quality certifications (ISO 9001, ISO 14001), and track records of similar supply contracts. HAMI maintains all required certifications and has been pre-approved by multiple major EPC contractors operating in the region.</p>
+                            <h4>Regional Standards & Compliance</h4>
+                            <p>Engineering products sold in the UAE must comply with ESMA (Emirates Authority for Standardization and Metrology) standards. Electrical equipment must carry appropriate IEC/BS certifications, and materials for oil & gas applications often require NACE compliance for corrosion standards. Our procurement team ensures all products meet the required regional and project-specific standards before delivery.</p>
+                            <h4>Logistics & Documentation</h4>
+                            <p>Importing engineering equipment into the UAE involves managing certificates of origin, material test certificates (MTC 3.1/3.2), packing lists conforming to project specs, and customs classification codes. Free zone warehousing can provide significant advantages for re-export operations. HAMI handles all documentation and customs clearance as part of our turnkey procurement service.</p>
+                            <h4>Cost Optimization Strategies</h4>
+                            <p>Our approach to cost optimization includes multi-source quotation analysis, bulk purchase consolidation across projects, strategic supplier partnerships for volume discounts, and leveraging UAE's zero-duty benefits on many industrial products. We typically achieve 15-25% cost savings compared to direct sourcing for our clients.</p>
+                            <h4>Why Choose HAMI for Engineering Procurement</h4>
+                            <p>With deep knowledge of the Middle Eastern market, established manufacturer relationships, and a full-service approach covering specification review, sourcing, quality inspection, and delivery, HAMI simplifies engineering procurement for projects of any scale. Reach out to discuss your next project's requirements.</p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <a href="#" class="blog-read-more" data-expanded="false">Read More <i class="fas fa-arrow-right"></i></a>
+                            <div class="blog-share-links">
+                                <a href="#" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://wa.me/971501722409?text=I%20read%20your%20engineering%20procurement%20guide" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                     Blog Article 5
+                     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+                <article class="blog-card animate-on-scroll" data-category="sustainability" itemscope itemtype="https://schema.org/BlogPosting">
+                    <div class="blog-card-image">
+                        <span class="blog-card-category">Sustainability</span>
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80" alt="Green energy and sustainable maritime practices" loading="lazy" itemprop="image">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Dec 20, 2025</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3 class="blog-card-title" itemprop="headline">Green Shipping: How IMO 2030 Regulations Are Transforming Marine Supply Chains</h3>
+                        <p class="blog-card-excerpt" itemprop="description">The International Maritime Organization's 2030 emission targets are reshaping how vessels are built, maintained, and supplied. Learn how the maritime industry is undergoing a green transformation.</p>
+                        <div class="blog-full-content">
+                            <h4>The IMO 2030 Mandate</h4>
+                            <p>The International Maritime Organization has set ambitious targets to reduce carbon intensity of international shipping by at least 40% by 2030 compared to 2008 levels. This regulation, combined with the upcoming Carbon Intensity Indicator (CII) ratings, is forcing shipowners and operators to fundamentally rethink how they build, operate, and maintain their vessels.</p>
+                            <h4>Impact on Marine Equipment Demand</h4>
+                            <p>The green shipping revolution is creating massive shifts in equipment demand. Low-sulfur compatible fuel systems, exhaust gas cleaning systems (scrubbers), shore power connection equipment, and energy-efficient propulsion components are seeing unprecedented demand. HAMI's marine division has adapted its product catalog to include these emerging technology categories.</p>
+                            <h4>Energy-Efficient Deck Equipment</h4>
+                            <p>Modern deck equipment is becoming smarter and more energy-efficient. Variable frequency drive (VFD) winches, LED navigation and deck lighting, and energy-recovery crane systems all contribute to reducing a vessel's overall energy consumption. These upgrades not only help meet IMO targets but also reduce operating costs â€” a double win for shipowners.</p>
+                            <h4>Alternative Fuels & Their Supply Chain Impact</h4>
+                            <p>LNG, methanol, ammonia, and hydrogen are emerging as alternative marine fuels. Each brings unique supply chain requirements â€” from specialized storage tanks and fuel handling systems to modified engine components and safety equipment. Ports in the UAE, particularly Abu Dhabi and Fujairah, are investing in alternative fuel bunkering infrastructure, positioning the region as a leader in the green shipping transition.</p>
+                            <h4>Digital Solutions for Emission Monitoring</h4>
+                            <p>Fleet management software with real-time emission monitoring capabilities is becoming essential. These systems track fuel consumption, voyage optimization data, and emission levels to help ship operators maintain compliance with CII ratings. HAMI can source and supply the sensor systems and monitoring hardware that integrate with these platforms.</p>
+                            <h4>How HAMI Supports the Green Transition</h4>
+                            <p>At HAMI, we're committed to supporting our maritime clients through this transition. We've expanded our supplier network to include manufacturers specializing in green marine technology, from scrubber systems and ballast water treatment to energy-efficient pumps and LED lighting solutions. Our technical team can advise on product specifications that help improve your vessel's CII rating while managing costs effectively.</p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <a href="#" class="blog-read-more" data-expanded="false">Read More <i class="fas fa-arrow-right"></i></a>
+                            <div class="blog-share-links">
+                                <a href="#" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://wa.me/971501722409?text=I%20read%20your%20green%20shipping%20article" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                     Blog Article 6
+                     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+                <article class="blog-card animate-on-scroll" data-category="uae" itemscope itemtype="https://schema.org/BlogPosting">
+                    <div class="blog-card-image">
+                        <span class="blog-card-category">UAE & Trade</span>
+                        <img src="https://images.unsplash.com/photo-1605745341112-85968b19335b?auto=format&fit=crop&w=600&q=80" alt="Sharjah port and shipping operations" loading="lazy" itemprop="image">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Dec 8, 2025</span>
+                            <span><i class="fas fa-clock"></i> 4 min read</span>
+                        </div>
+                        <h3 class="blog-card-title" itemprop="headline">Sharjah's Rise as a Maritime and Trading Powerhouse: What It Means for Businesses</h3>
+                        <p class="blog-card-excerpt" itemprop="description">Often overshadowed by neighboring Dubai, Sharjah has quietly built a formidable maritime and industrial base. With the Hamriyah Free Zone and growing port capacity, the emirate offers unique advantages for trading companies.</p>
+                        <div class="blog-full-content">
+                            <h4>Sharjah: The Third Largest Emirate With Big Ambitions</h4>
+                            <p>While Dubai grabs headlines, Sharjah â€” the UAE's third largest emirate by area â€” has been steadily building an industrial and maritime ecosystem that rivals its neighbors in value, if not in flash. Under the leadership of His Highness Sheikh Dr. Sultan bin Muhammad Al Qasimi, Sharjah has invested strategically in ports, free zones, and educational institutions that support the trading sector.</p>
+                            <h4>Hamriyah Free Zone: A Hidden Gem</h4>
+                            <p>The Hamriyah Free Zone Authority (HFZA) spans over 25 square kilometers and hosts more than 6,500 companies from 163 countries. It's particularly strong in maritime, oil & gas, and industrial trading sectors. Companies operating in HFZ enjoy 100% ownership, 15-year renewable tax exemptions, on-site customs clearance, and direct port access â€” making it one of the most cost-effective bases for trading operations in the entire GCC.</p>
+                            <h4>Dual-Coast Advantage</h4>
+                            <p>Sharjah is the only emirate with coastline on both the Arabian Gulf (west) and the Gulf of Oman (east). The deepwater port of Khorfakkan provides direct access to Indian Ocean shipping routes without transiting the Strait of Hormuz â€” a strategic advantage during times of regional tension. This dual-coast positioning is invaluable for trading companies handling time-sensitive marine supplies.</p>
+                            <h4>Sharjah Maritime Academy & Talent Pipeline</h4>
+                            <p>The emirate's investment in maritime education through the Sharjah Maritime Academy ensures a steady pipeline of qualified maritime professionals. For companies like HAMI, this means access to knowledgeable technical staff who understand both the commercial and engineering aspects of marine supply.</p>
+                            <h4>HAMI's Sharjah Advantage</h4>
+                            <p>As a company registered under the Sharjah Economic Department, Al Hamidiya General Trading LLC benefits directly from the emirate's trading infrastructure. Our proximity to Hamriyah Free Zone, Sharjah Airport International Free Zone (SAIF Zone), and both coastlines allows us to serve clients with speed and efficiency that larger, Dubai-based competitors often can't match for industrial and marine products.</p>
+                            <p>Whether you're a shipowner needing urgent spare parts delivery to a vessel at Khorfakkan or a hotel developer sourcing equipment for a new project, Sharjah's infrastructure â€” and HAMI's local expertise â€” combine to deliver exceptional service. Contact us to experience the Sharjah advantage firsthand.</p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <a href="#" class="blog-read-more" data-expanded="false">Read More <i class="fas fa-arrow-right"></i></a>
+                            <div class="blog-share-links">
+                                <a href="#" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://wa.me/971501722409?text=I%20read%20your%20Sharjah%20trading%20article" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    Newsletter / WhatsApp CTA Section
+    ============================================ -->
+    <section class="py-5 section-light">
+        <div class="container">
+            <div class="blog-newsletter animate-on-scroll">
+                <div class="uae-accent-line"></div>
+                <h3>Stay Updated with HAMI Insights</h3>
+                <p>Get industry insights, product updates, and trade news delivered to your inbox â€” or chat with us directly on WhatsApp.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" aria-label="Email for newsletter">
+                    <button type="button"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                </div>
+                <div class="mt-4">
+                    <a href="https://wa.me/971501722409?text=Hello%21%20I%20want%20to%20receive%20HAMI%20updates" target="_blank" rel="noopener" class="btn btn-outline-light btn-lg">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp: +971 50 172 2409
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    Related Topics Section
+    ============================================ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Explore More</h2>
+                <p>Dive deeper into topics that matter for your business.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card text-center animate-on-scroll animate-delay-1">
+                        <div class="icon-box"><i class="fas fa-ship"></i></div>
+                        <h4>Marine Solutions</h4>
+                        <p>Explore our comprehensive marine equipment and spare parts catalog for vessels and offshore platforms.</p>
+                        <a href="services.html#marine" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card text-center animate-on-scroll animate-delay-2">
+                        <div class="icon-box"><i class="fas fa-hotel"></i></div>
+                        <h4>Hotel & Hospitality</h4>
+                        <p>Kitchen equipment, pool systems, HVAC, and more for luxury hotels and resorts.</p>
+                        <a href="services.html#hotel" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="service-card text-center animate-on-scroll animate-delay-3">
+                        <div class="icon-box"><i class="fas fa-shopping-cart"></i></div>
+                        <h4>Browse Our Shop</h4>
+                        <p>Ready to order? Check our online shop for marine, engineering, and safety products.</p>
+                        <a href="shop.html" class="read-more">Visit Shop <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    Shop Promo Banner
+    ============================================ -->
+    <section class="shop-promo-banner">
+        <div class="container">
+            <div class="shop-promo-inner">
+                <div class="promo-icon"><i class="fas fa-shopping-bag"></i></div>
+                <h2>Looking for Our Products?</h2>
+                <p>Explore our online shop for marine, engineering, and safety products â€” ready to order.</p>
+                <a href="shop.html" class="btn-shop-cta">Visit Shop <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    Footer Section
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <!-- Footer Brand -->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                        <div class="footer-brand">
+                            <img src="images/HAMI_Logo.jpeg" alt="Al Hamidiya General Trading LLC Logo" class="footer-logo">
+                            <h3>Al Hamidiya <span>General Trading LLC</span></h3>
+                        </div>
+                        <p class="footer-text">Al Hamidiya General Trading LLC (HAMI) â€” <strong>Hotel And Marine Innovations</strong>. Your trusted partner for global engineering and marine solutions from Sharjah, UAE.</p>
+                        <p class="footer-arabic" dir="rtl">Ø§Ù„Ø­Ù…ÙŠØ¯ÙŠØ© Ù„Ù„ØªØ¬Ø§Ø±Ø© Ø§Ù„Ø¹Ø§Ù…Ø© Ø°.Ù….Ù…</p>
+                        <div class="footer-social">
+                            <a href="https://wa.me/971501722409?text=Hello%21%20I%20am%20interested%20in%20HAMI%20LLC%20services." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Links -->
+                    <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                        <h5 class="footer-title">Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="industries.html">Industries</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Services Links -->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <h5 class="footer-title">Our Services</h5>
+                        <ul class="footer-links">
+                            <li><a href="services.html#marine">Marine Solutions</a></li>
+                            <li><a href="services.html#engineering">Engineering Supplies</a></li>
+                            <li><a href="services.html#hotel">Hotel & Leisure</a></li>
+                            <li><a href="services.html#logistics">Procurement & Logistics</a></li>
+                            <li><a href="services.html#spare-parts">Spare Parts Handling</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="footer-title">Contact Us</h5>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Al Hamidiya General Trading LLC<br>Sharjah, United Arab Emirates</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <span><a href="tel:+97165484001">+971 6 5484001</a></span>
+                            </li>
+                            <li>
+                                <i class="fab fa-whatsapp"></i>
+                                <span><a href="https://wa.me/971501722409" target="_blank" rel="noopener">+971 50 172 2409</a></span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span><a href="mailto:info@hamillc.com">info@hamillc.com</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2026</span> Al Hamidiya General Trading LLC (Ø§Ù„Ø­Ù…ÙŠØ¯ÙŠØ© Ù„Ù„ØªØ¬Ø§Ø±Ø© Ø§Ù„Ø¹Ø§Ù…Ø© Ø°.Ù….Ù…) â€“ UAE. All Rights Reserved.</p>
+                <p class="footer-credit">Designed &amp; Developed by <strong class="footer-credit-highlight">XENORA Technologies</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    Back to Top Button
+    ============================================ -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ============================================
+    Scripts
+    ============================================ -->
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+
+    <!-- UI Effects -->
+    <script src="js/ui.js"></script>
+
+    <!-- Blog Filter JS -->
+    <script>
+    (function() {
+        'use strict';
+
+        // â”€â”€â”€ Blog Tag Filtering â”€â”€â”€
+        const tags = document.querySelectorAll('.blog-tag');
+        const cards = document.querySelectorAll('.blog-card');
+
+        tags.forEach(function(tag) {
+            tag.addEventListener('click', function(e) {
+                e.preventDefault();
+                const filter = this.dataset.filter;
+
+                // Update active state
+                tags.forEach(function(t) { t.classList.remove('active-tag'); });
+                this.classList.add('active-tag');
+
+                // Filter cards with animation
+                cards.forEach(function(card) {
+                    const category = card.dataset.category;
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = '';
+                        card.style.animation = 'fadeInUp 0.5s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // â”€â”€â”€ Active tag style â”€â”€â”€
+        const style = document.createElement('style');
+        style.textContent = `.active-tag { border-color: var(--orange-accent) !important; color: var(--white) !important; background: var(--orange-accent) !important; }`;
+        document.head.appendChild(style);
+
+        // â”€â”€â”€ Read More Toggle â”€â”€â”€
+        const readMoreLinks = document.querySelectorAll('.blog-read-more');
+        readMoreLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const card = this.closest('.blog-card');
+                const fullContent = card.querySelector('.blog-full-content');
+                const excerpt = card.querySelector('.blog-card-excerpt');
+                const isExpanded = this.dataset.expanded === 'true';
+
+                if (isExpanded) {
+                    // Collapse
+                    fullContent.style.display = 'none';
+                    excerpt.style.display = '';
+                    this.dataset.expanded = 'false';
+                    this.classList.remove('expanded');
+                    this.innerHTML = (card.classList.contains('blog-featured') ? 'Read Full Article' : 'Read More') + ' <i class="fas fa-arrow-right"></i>';
+                    // Remove featured layout when collapsed
+                    if (card.classList.contains('blog-featured')) {
+                        card.classList.remove('blog-expanded');
+                    }
+                    // Scroll to card top
+                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                    // Expand
+                    fullContent.style.display = 'block';
+                    excerpt.style.display = 'none';
+                    this.dataset.expanded = 'true';
+                    this.classList.add('expanded');
+                    this.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+                    // For featured cards, switch to single-column layout when expanded
+                    if (card.classList.contains('blog-featured')) {
+                        card.classList.add('blog-expanded');
+                    }
+                }
+            });
+        });
+
+        // â”€â”€â”€ Reading time animation on scroll â”€â”€â”€
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cards.forEach(function(card) { observer.observe(card); });
+    })();
+    </script>
+
+    <!-- HAMI Bot Chat Widget -->
+    <script src="js/chat.js"></script>
+</body>
+</html>

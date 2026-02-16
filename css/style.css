@@ -191,24 +191,53 @@ p {
 
 .navbar-brand {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.75rem;
+    font-size: 1.35rem;
     font-weight: 700;
     color: var(--navy-blue) !important;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
+    max-width: 400px;
+    line-height: 1.2;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    text-decoration: none;
 }
 
+.navbar-brand .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.navbar-brand .brand-text .brand-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--navy-blue);
+    white-space: nowrap;
+}
+
+.navbar-brand .brand-text .brand-subtitle {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--orange-accent);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    margin-top: 1px;
+}
+
+/* Legacy span fallback */
 .navbar-brand span {
     color: var(--orange-accent);
 }
 
 .navbar-logo {
-    width: 50px;
-    height: 50px;
+    width: 72px;
+    height: 72px;
     object-fit: contain;
     border-radius: var(--radius-md);
     transition: transform var(--transition-normal);
+    flex-shrink: 0;
 }
 
 .navbar-brand:hover .navbar-logo {
@@ -1902,7 +1931,7 @@ textarea.form-control { min-height: 150px; resize: vertical; }
    ============================================ */
 .hamibot-fab {
     position: fixed;
-    bottom: 28px;
+    bottom: 100px;
     right: 28px;
     width: 62px;
     height: 62px;
@@ -1932,7 +1961,7 @@ textarea.form-control { min-height: 150px; resize: vertical; }
 
 .hamibot-tooltip {
     position: fixed;
-    bottom: 98px;
+    bottom: 170px;
     right: 28px;
     background: var(--navy-blue);
     color: var(--white);
@@ -1965,9 +1994,42 @@ textarea.form-control { min-height: 150px; resize: vertical; }
     transform: rotate(45deg);
 }
 
+/* Mobile-only chat bubble near FAB */
+.hamibot-mobile-bubble {
+    display: none;
+    position: fixed;
+    bottom: 140px;
+    right: 14px;
+    background: var(--navy-blue);
+    color: var(--white);
+    padding: 6px 14px;
+    border-radius: 16px 16px 4px 16px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    z-index: 1499;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    transform: scale(0.8) translateY(6px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    font-family: 'Inter', sans-serif;
+}
+.hamibot-mobile-bubble.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+@media (max-width: 767.98px) {
+    .hamibot-mobile-bubble { display: block; }
+}
+@media (max-width: 575.98px) {
+    .hamibot-mobile-bubble { bottom: 130px; right: 12px; font-size: 0.72rem; padding: 5px 12px; }
+}
+
 .hamibot-modal {
     position: fixed;
-    bottom: 100px;
+    bottom: 172px;
     right: 28px;
     width: 380px;
     max-width: calc(100vw - 32px);
@@ -2166,6 +2228,193 @@ textarea.form-control { min-height: 150px; resize: vertical; }
     margin: 0;
 }
 
+/* WhatsApp link in chat footer */
+.hamibot-wa-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #25d366;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 4px;
+    transition: color var(--transition-fast);
+}
+
+.hamibot-wa-link:hover { color: #128c7e; }
+.hamibot-wa-link i { font-size: 1.1rem; }
+
+/* ─── FAB Robot Character ─── */
+.fab-robot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 36px;
+    height: 36px;
+}
+
+.fab-robot-antenna {
+    width: 4px;
+    height: 8px;
+    background: #fff;
+    border-radius: 2px;
+    position: relative;
+    margin-bottom: 1px;
+}
+
+.fab-robot-antenna::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    background: #ffd700;
+    border-radius: 50%;
+    animation: antennaPulse 2s ease-in-out infinite;
+}
+
+.fab-robot-head {
+    width: 28px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    position: relative;
+}
+
+.fab-robot-eye {
+    width: 6px;
+    height: 6px;
+    background: var(--navy-blue);
+    border-radius: 50%;
+    animation: robotBlink 3s ease-in-out infinite;
+}
+
+.fab-robot-eye.left { animation-delay: 0.1s; }
+
+.fab-robot-body {
+    width: 22px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 0 0 6px 6px;
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.fab-robot-wave {
+    font-size: 0.55rem;
+    animation: waveHand 2s ease-in-out infinite;
+    display: none;
+}
+
+.hamibot-fab.peek .fab-robot-wave { display: inline; }
+.hamibot-fab.peek { transform: scale(1.15); }
+
+@keyframes antennaPulse {
+    0%, 100% { box-shadow: 0 0 4px rgba(255, 215, 0, 0.4); }
+    50% { box-shadow: 0 0 12px rgba(255, 215, 0, 0.9); }
+}
+
+@keyframes robotBlink {
+    0%, 44%, 50%, 100% { transform: scaleY(1); }
+    46% { transform: scaleY(0.1); }
+}
+
+@keyframes waveHand {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(20deg); }
+    50% { transform: rotate(-10deg); }
+    75% { transform: rotate(15deg); }
+}
+
+/* ─── Robot face in header ─── */
+.hami-robot-face {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.robot-eyes {
+    display: flex;
+    gap: 8px;
+}
+
+.robot-eye {
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    animation: robotBlink 3s ease-in-out infinite;
+    position: relative;
+}
+
+.robot-eye::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 4px;
+    height: 4px;
+    background: var(--navy-blue);
+    border-radius: 50%;
+}
+
+.robot-mouth {
+    width: 14px;
+    height: 4px;
+    border: 2px solid #fff;
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+}
+
+/* ─── Tooltip wave ─── */
+.tooltip-wave {
+    display: inline-block;
+    animation: waveHand 1.5s ease-in-out infinite;
+    margin-right: 4px;
+}
+
+/* ─── WhatsApp Floating Button ─── */
+.hamibot-whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: #25d366;
+    color: #fff;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1501;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    animation: whatsappPulse 3s ease-in-out infinite;
+}
+
+.hamibot-whatsapp-float:hover {
+    transform: scale(1.12);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6);
+    color: #fff;
+    animation: none;
+}
+
 /* ============================================
    17. Animations & Keyframes
    ============================================ */
@@ -2298,6 +2547,86 @@ body.hamibot-active .back-to-top {
 }
 
 /* ============================================
+   UTILITY CLASSES — Replacing inline styles
+   ============================================ */
+
+/* Hero tagline (index.html hero section) */
+.hero-tagline {
+    font-size: clamp(0.95rem, 1.5vw, 1.3rem);
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, rgba(232, 93, 4, 0.15), transparent);
+    display: inline-block;
+    padding: 6px 18px 6px 0;
+    border-left: 3px solid var(--orange-accent);
+    padding-left: 14px;
+}
+
+/* Hero Arabic subtitle (about.html hero) */
+.hero-arabic-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+}
+
+/* Inline flag images */
+.inline-flag {
+    height: 1em;
+    vertical-align: middle;
+    display: inline;
+}
+
+.inline-flag--sm {
+    height: 0.8em;
+    vertical-align: middle;
+    display: inline;
+}
+
+/* Footer Arabic text */
+.footer-arabic {
+    font-size: 0.95rem;
+    color: var(--steel-light);
+    margin-bottom: 12px;
+}
+
+/* Footer credit line */
+.footer-credit {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.footer-credit-highlight {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* Service card accent borders (about.html HAMI stands for) */
+.service-card--accent-orange {
+    border-top: 4px solid var(--orange-accent);
+}
+
+.service-card--accent-navy {
+    border-top: 4px solid var(--navy-blue);
+}
+
+/* Blog full content (hidden by default, toggled by JS) */
+.blog-full-content {
+    display: none;
+}
+
+/* Contact WhatsApp icon styles */
+.icon--whatsapp {
+    background: rgba(37, 211, 102, 0.12);
+}
+
+.icon--whatsapp .fab.fa-whatsapp {
+    color: #25d366;
+}
+
+/* ============================================
    20. Alerts
    ============================================ */
 .alert-success-custom {
@@ -2326,6 +2655,7 @@ body.hamibot-active .back-to-top {
 @media (min-width: 1440px) {
     .container { max-width: 1320px; }
     .hero-content h1 { font-size: 4rem; }
+    .hero-tagline { font-size: 1.35rem; letter-spacing: 4px; padding: 8px 22px 8px 16px; }
     .shop-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
@@ -2340,6 +2670,25 @@ body.hamibot-active .back-to-top {
 /* Medium Devices (Tablets, < 992px) */
 @media (max-width: 991.98px) {
     :root { --section-padding: 60px 0; }
+
+    .navbar-brand {
+        font-size: 1.15rem;
+        max-width: 320px;
+        gap: 10px;
+    }
+
+    .navbar-brand .brand-text .brand-name {
+        font-size: 1.15rem;
+    }
+
+    .navbar-brand .brand-text .brand-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .navbar-logo {
+        width: 56px;
+        height: 56px;
+    }
 
     .navbar-collapse {
         background: var(--white);
@@ -2396,8 +2745,10 @@ body.hamibot-active .back-to-top {
     .shop-toolbar { top: 72px; }
 
     .hamibot-modal { bottom: 100px; right: 16px; width: calc(100vw - 32px); max-height: 480px; }
-    .hamibot-fab { bottom: 24px; right: 24px; }
-    body.hamibot-active .back-to-top { right: 96px; }
+    .hamibot-fab { bottom: 96px; right: 24px; }
+    .hamibot-whatsapp-float { bottom: 28px; right: 24px; width: 56px; height: 56px; font-size: 1.6rem; }
+    .back-to-top { bottom: 28px; right: 88px; width: 44px; height: 44px; }
+    body.hamibot-active .back-to-top { right: 88px; }
 }
 
 /* Small Devices (< 768px) */
@@ -2428,11 +2779,38 @@ body.hamibot-active .back-to-top {
     .shop-promo-banner h2 { font-size: 1.5rem; }
     .shop-promo-banner .btn-shop-cta { padding: 14px 32px; font-size: 1rem; }
 
-    .hamibot-modal { bottom: 96px; right: 8px; width: calc(100vw - 16px); max-height: 440px; }
+    .hamibot-modal { bottom: 170px; right: 8px; width: calc(100vw - 16px); max-height: 440px; }
     .hamibot-body { min-height: 220px; max-height: 280px; }
-    .hamibot-fab { width: 54px; height: 54px; font-size: 1.4rem; bottom: 20px; right: 20px; }
+    .hamibot-fab { width: 52px; height: 52px; font-size: 1.3rem; bottom: 86px; right: 16px; }
     .hamibot-tooltip { display: none; }
-    body.hamibot-active .back-to-top { right: 84px; }
+    .hamibot-whatsapp-float { bottom: 24px; right: 16px; width: 52px; height: 52px; font-size: 1.5rem; }
+    .back-to-top { bottom: 24px; right: 76px; width: 42px; height: 42px; }
+    body.hamibot-active .back-to-top { right: 76px; }
+
+    .navbar-brand {
+        font-size: 1rem;
+        max-width: 260px;
+        gap: 8px;
+    }
+
+    .navbar-brand .brand-text .brand-name {
+        font-size: 1rem;
+    }
+
+    .navbar-brand .brand-text .brand-subtitle {
+        font-size: 0.7rem;
+    }
+
+    .navbar-brand span {
+        display: block;
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+
+    .navbar-logo {
+        width: 46px;
+        height: 46px;
+    }
 }
 
 /* Extra Small Devices (< 576px) */
@@ -2449,4 +2827,34 @@ body.hamibot-active .back-to-top {
     .shop-grid { grid-template-columns: 1fr; }
     .shop-product-card .shop-card-img { height: 200px; }
     .shop-promo-banner .btn-shop-cta { width: 100%; justify-content: center; }
+
+    .navbar-brand {
+        font-size: 0.9rem;
+        max-width: 200px;
+        gap: 6px;
+    }
+
+    .navbar-brand .brand-text .brand-name {
+        font-size: 0.9rem;
+    }
+
+    .navbar-brand .brand-text .brand-subtitle {
+        font-size: 0.65rem;
+    }
+
+    .navbar-brand span {
+        display: block;
+        font-size: 0.78rem;
+        line-height: 1.2;
+    }
+
+    .navbar-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hamibot-fab { width: 48px; height: 48px; font-size: 1.2rem; bottom: 80px; right: 14px; }
+    .hamibot-whatsapp-float { bottom: 20px; right: 14px; width: 48px; height: 48px; font-size: 1.4rem; }
+    .back-to-top { bottom: 20px; right: 70px; width: 40px; height: 40px; font-size: 0.85rem; }
+    body.hamibot-active .back-to-top { right: 70px; }
 }
