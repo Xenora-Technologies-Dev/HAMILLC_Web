@@ -176,9 +176,9 @@
     let isOpen = false;
     let isAnimating = false;
     let tooltipTimer = null;
-    let hasShownTooltip = false;
     let peekInterval = null;
     let mobileBubbleInterval = null;
+    let mobileBubbleTimeout = null;
 
     // ─── DOM References (populated on init) ───
     let fab, tooltip, backdrop, modal, chatBody, closeBtn, mobileBubble;
@@ -326,7 +326,7 @@
     // ─── Mobile Bubble (intermittent "Hi I am Hami Bot" on small screens) ───
     function startMobileBubble() {
         // Show first bubble after 3 seconds
-        setTimeout(function () {
+        mobileBubbleTimeout = setTimeout(function () {
             showMobileBubbleBriefly();
         }, 3000);
         // Then repeat every 4 seconds
@@ -346,6 +346,7 @@
     }
 
     function stopMobileBubble() {
+        clearTimeout(mobileBubbleTimeout);
         clearInterval(mobileBubbleInterval);
         if (mobileBubble) mobileBubble.classList.remove('visible');
     }

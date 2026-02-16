@@ -52,6 +52,7 @@
 
             if (section.getBoundingClientRect().top < window.innerHeight * 0.8) {
                 animated = true;
+                window.removeEventListener('scroll', animateCounters);
 
                 counters.forEach(function (counter) {
                     var target = parseInt(counter.getAttribute('data-target'), 10);

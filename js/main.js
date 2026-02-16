@@ -103,6 +103,9 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!message.value.trim()) { showError(message, 'Please enter your message'); isValid = false; }
             else if (message.value.trim().length < 10) { showError(message, 'Message must be at least 10 characters'); isValid = false; }
 
+            var privacy = document.getElementById('privacy');
+            if (privacy && !privacy.checked) { showError(privacy, 'You must agree to continue'); isValid = false; }
+
             if (isValid) {
                 var submitBtn = contactForm.querySelector('button[type="submit"]');
                 var originalBtnText = submitBtn.innerHTML;
@@ -230,24 +233,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setActiveNavLink();
 
-    // ============================================
-    // Console Branding
-    // ============================================
-    console.log('%c\u{1F6A2} AL HAMIDIYAH GEN TR LLC (HAMI)', 'color: #0a2647; font-size: 20px; font-weight: bold;');
-    console.log('%cGlobal Engineering & Marine Solutions Partner', 'color: #e85d04; font-size: 14px;');
-
 });
-
-// ============================================
-// Quote Request Modal (if needed)
-// ============================================
-function openQuoteModal(service) {
-    service = service || '';
-    var modal = document.getElementById('quoteModal');
-    if (modal && typeof bootstrap !== 'undefined') {
-        var bsModal = new bootstrap.Modal(modal);
-        var serviceField = modal.querySelector('#quoteService');
-        if (serviceField && service) serviceField.value = service;
-        bsModal.show();
-    }
-}

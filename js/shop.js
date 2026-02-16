@@ -135,7 +135,7 @@
      */
     function loadCart() {
         try {
-            const data = sessionStorage.getItem(CART_KEY);
+            const data = localStorage.getItem(CART_KEY);
             return data ? JSON.parse(data) : [];
         } catch (e) {
             return [];
@@ -143,11 +143,11 @@
     }
 
     /**
-     * Save cart to sessionStorage
+     * Save cart to localStorage
      * @param {Array} cart
      */
     function saveCart(cart) {
-        sessionStorage.setItem(CART_KEY, JSON.stringify(cart));
+        localStorage.setItem(CART_KEY, JSON.stringify(cart));
     }
 
     // Active cart array
@@ -206,10 +206,12 @@
      * Trigger IntersectionObserver or fallback animation check
      * for dynamically inserted .animate-on-scroll elements.
      */
+    let shopScrollObserver = null;
     function triggerScrollAnimations() {
         const els = document.querySelectorAll('.shop-product-card.animate-on-scroll:not(.animated)');
         if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries, obs) => {
+            if (shopScrollObserver) shopScrollObserver.disconnect();
+            shopScrollObserver = new IntersectionObserver((entries, obs) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animated');
@@ -217,7 +219,7 @@
                     }
                 });
             }, { threshold: 0.1 });
-            els.forEach(el => observer.observe(el));
+            els.forEach(el => shopScrollObserver.observe(el));
         } else {
             els.forEach(el => el.classList.add('animated'));
         }
