@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    var navLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.nav-more-toggle)');
     navLinks.forEach(function (link) {
         link.addEventListener('click', function () {
             if (navbarCollapse && navbarCollapse.classList.contains('show')) {
@@ -202,6 +202,60 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    // ============================================
+    // "More" Dropdown — Desktop Hover + Mobile Accordion
+    // ============================================
+    var moreDropdown = document.querySelector('.nav-more-dropdown');
+    var moreToggle = document.querySelector('.nav-more-toggle');
+    var moreMenu = document.querySelector('.nav-more-menu');
+
+    if (moreToggle && moreDropdown) {
+        // Prevent default anchor behavior
+        moreToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            // Mobile accordion toggle
+            if (window.innerWidth < 992) {
+                moreDropdown.classList.toggle('open');
+            }
+        });
+
+        // Close dropdown when clicking a submenu link (mobile)
+        if (moreMenu) {
+            var subLinks = moreMenu.querySelectorAll('a');
+            subLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    moreDropdown.classList.remove('open');
+                    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                        var bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                        if (bsCollapse) bsCollapse.hide();
+                    }
+                });
+            });
+        }
+
+        // Close dropdown when clicking outside (desktop)
+        document.addEventListener('click', function (e) {
+            if (!moreDropdown.contains(e.target)) {
+                moreDropdown.classList.remove('open');
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                moreDropdown.classList.remove('open');
+            }
+        });
+
+        // Update aria-expanded
+        var observer = new MutationObserver(function () {
+            var isOpen = moreDropdown.classList.contains('open');
+            moreToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+        observer.observe(moreDropdown, { attributes: true, attributeFilter: ['class'] });
+    }
 
     // ============================================
     // Smooth Scroll for Anchor Links
@@ -221,7 +275,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // ============================================
     function setActiveNavLink() {
         var currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        navLinks.forEach(function (link) {
+        var allNavLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.nav-more-toggle)');
+        allNavLinks.forEach(function (link) {
             var href = link.getAttribute('href');
             if (href === currentPage || (currentPage === '' && href === 'index.html')) {
                 link.classList.add('active');
@@ -229,8 +284,46 @@ document.addEventListener('DOMContentLoaded', function () {
                 link.classList.remove('active');
             }
         });
+
+        // Handle "More" dropdown children — highlight More toggle if a child is active
+        var moreToggleEl = document.querySelector('.nav-more-toggle');
+        var moreMenuLinks = document.querySelectorAll('.nav-more-menu a');
+        var moreChildActive = false;
+        moreMenuLinks.forEach(function (link) {
+            var href = link.getAttribute('href');
+            if (href === currentPage) {
+                link.classList.add('active');
+                moreChildActive = true;
+            } else {
+                link.classList.remove('active');
+            }
+        });
+        if (moreToggleEl) {
+            if (moreChildActive) {
+                moreToggleEl.classList.add('active');
+            } else {
+                moreToggleEl.classList.remove('active');
+            }
+        }
     }
 
     setActiveNavLink();
+
+    // ============================================
+    // Partnership Page — Floating Particles
+    // ============================================
+    var particleContainer = document.getElementById('partnershipParticles');
+    if (particleContainer) {
+        for (var i = 0; i < 30; i++) {
+            var particle = document.createElement('span');
+            particle.classList.add('partnership-particle');
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (6 + Math.random() * 10) + 's';
+            particle.style.animationDelay = (Math.random() * 8) + 's';
+            particle.style.width = (2 + Math.random() * 4) + 'px';
+            particle.style.height = particle.style.width;
+            particleContainer.appendChild(particle);
+        }
+    }
 
 });

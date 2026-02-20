@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- ============================================
     Al Hamidiya General Trading LLC (HAMI) - Blog Page
-    Hotel And Marine Innovations — Insights & News
+    Hotel And Marine Innovations � Insights & News
     ============================================ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +31,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Blog",
-        "name": "HAMI LLC Blog — Hotel And Marine Innovations",
+        "name": "HAMI LLC Blog � Hotel And Marine Innovations",
         "description": "Industry insights and news from Al Hamidiya General Trading LLC, covering marine engineering, hospitality equipment, and UAE trade.",
         "url": "https://www.hamillc.com/blog.html",
         "publisher": {
@@ -62,13 +62,13 @@
 
     <!-- Blog-specific Styles -->
     <style>
-        /* â”€â”€â”€ Blog Hero â”€â”€â”€ */
+        /* ─── Blog Hero ─── */
         .page-hero-blog {
             background: linear-gradient(135deg, rgba(10,38,71,0.92) 0%, rgba(20,66,114,0.88) 50%, rgba(232,93,4,0.75) 100%),
                          url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
         }
 
-        /* â”€â”€â”€ Blog Grid â”€â”€â”€ */
+        /* ─── Blog Grid ─── */
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -79,7 +79,7 @@
             .blog-grid { grid-template-columns: 1fr; }
         }
 
-        /* â”€â”€â”€ Blog Card â”€â”€â”€ */
+        /* ─── Blog Card ─── */
         .blog-card {
             background: var(--white);
             border-radius: var(--radius-lg);
@@ -215,7 +215,7 @@
             color: var(--white);
         }
 
-        /* â”€â”€â”€ Featured Blog (first post) â”€â”€â”€ */
+        /* ─── Featured Blog (first post) ─── */
         .blog-featured {
             grid-column: 1 / -1;
             display: grid;
@@ -233,7 +233,7 @@
             .blog-featured .blog-card-image { min-height: 220px; }
         }
 
-        /* â”€â”€â”€ Blog Tags Cloud â”€â”€â”€ */
+        /* ─── Blog Tags Cloud ─── */
         .blog-tags {
             display: flex;
             flex-wrap: wrap;
@@ -258,7 +258,7 @@
             background: rgba(232, 93, 4, 0.05);
         }
 
-        /* â”€â”€â”€ Newsletter / CTA â”€â”€â”€ */
+        /* ─── Newsletter / CTA ─── */
         .blog-newsletter {
             background: var(--gradient-primary);
             border-radius: var(--radius-lg);
@@ -309,7 +309,7 @@
             .blog-newsletter { padding: 32px 20px; }
         }
 
-        /* â”€â”€â”€ UAE Decorative Elements â”€â”€â”€ */
+        /* ─── UAE Decorative Elements ─── */
         .uae-accent-line {
             width: 80px;
             height: 4px;
@@ -329,7 +329,7 @@
             z-index: 0;
         }
 
-        /* â”€â”€â”€ Blog Full Content (expanded) â”€â”€â”€ */
+        /* ─── Blog Full Content (expanded) ─── */
         .blog-full-content {
             color: var(--steel-grey);
             font-size: 0.95rem;
@@ -404,13 +404,17 @@
                         <a class="nav-link" href="products.html">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="industries.html">Industries</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link nav-shop-highlight" href="shop.html"><i class="fas fa-shopping-cart me-1"></i> Shop</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="blog.html">Blog</a>
+                    <li class="nav-item nav-more-dropdown">
+                        <a class="nav-link nav-more-toggle" href="#" role="button" aria-expanded="false" aria-haspopup="true">
+                            More <i class="fas fa-chevron-down nav-more-arrow"></i>
+                        </a>
+                        <ul class="nav-more-menu">
+                            <li><a href="industries.html"><i class="fas fa-industry"></i> Industries</a></li>
+                            <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                            <li><a href="partnership.html"><i class="fas fa-handshake"></i> Partnership</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
@@ -461,9 +465,9 @@
         <div class="container">
             <div class="blog-grid" id="blogGrid">
 
-                <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-                     FEATURED POST — Blog Article 1
-                     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+                <!-- ───────────────────────────────────────────
+                     FEATURED POST � Blog Article 1
+                     ─────────────────────────────────────────── -->
                 <article class="blog-card blog-featured animate-on-scroll" data-category="uae" itemscope itemtype="https://schema.org/BlogPosting">
                     <div class="blog-card-image">
                         <span class="blog-card-category">UAE & Trade</span>
@@ -478,15 +482,15 @@
                         <p class="blog-card-excerpt" itemprop="description">The UAE's strategic geographic position, world-class port infrastructure, and business-friendly regulations continue to make it the go-to destination for marine equipment sourcing and hospitality procurement. With Jebel Ali Port ranked among the top 10 busiest ports globally and Sharjah's free zones offering unmatched trade advantages, companies like HAMI leverage this ecosystem to deliver quality products across 30+ countries.</p>
                         <div class="blog-full-content">
                             <h4>A Strategic Crossroads for Global Trade</h4>
-                            <p>The United Arab Emirates sits at the intersection of three continents — Asia, Europe, and Africa — making it an unparalleled hub for international trade. For companies in the marine and hospitality sectors, this geographic advantage translates into faster delivery times, lower shipping costs, and access to a vast supplier network spanning the globe.</p>
+                            <p>The United Arab Emirates sits at the intersection of three continents � Asia, Europe, and Africa � making it an unparalleled hub for international trade. For companies in the marine and hospitality sectors, this geographic advantage translates into faster delivery times, lower shipping costs, and access to a vast supplier network spanning the globe.</p>
                             <h4>World-Class Port Infrastructure</h4>
                             <p>Jebel Ali Port, operated by DP World, is the largest man-made harbour in the world and consistently ranks among the top 10 busiest container ports globally. It handles over 15 million TEUs annually, connecting the UAE to more than 180 direct port calls weekly. For marine equipment procurement, this means access to direct shipping routes to virtually every maritime nation on earth.</p>
-                            <p>Sharjah's own ports — including Khorfakkan on the Indian Ocean side — provide additional logistics flexibility. Companies like HAMI leverage these dual-coast facilities to expedite deliveries for urgent vessel supplies and hospitality equipment orders.</p>
+                            <p>Sharjah's own ports � including Khorfakkan on the Indian Ocean side � provide additional logistics flexibility. Companies like HAMI leverage these dual-coast facilities to expedite deliveries for urgent vessel supplies and hospitality equipment orders.</p>
                             <h4>Free Zones: A Business Accelerator</h4>
                             <p>The UAE's 40+ free zones offer 100% foreign ownership, zero income tax, zero customs duty on re-exports, and simplified incorporation processes. The Hamriyah Free Zone in Sharjah specifically caters to industrial and maritime companies, providing warehousing, manufacturing, and trading licenses that enable rapid scale-up of procurement operations.</p>
                             <h4>How HAMI Leverages This Ecosystem</h4>
-                            <p>As a Sharjah-based general trading company, HAMI — Al Hamidiya General Trading LLC — operates at the heart of this ecosystem. Our procurement team sources marine spare parts, hotel kitchen equipment, safety gear, and engineering supplies from top manufacturers in Europe, Asia, and the Americas, consolidating shipments through UAE ports for delivery to clients across the Middle East, Africa, and South Asia.</p>
-                            <p>Our relationships with over 200 global manufacturers, combined with the UAE's trade-friendly infrastructure, allow us to offer competitive pricing, fast turnaround, and reliable quality assurance — the three pillars that keep international buyers choosing the UAE for their procurement needs.</p>
+                            <p>As a Sharjah-based general trading company, HAMI � Al Hamidiya General Trading LLC � operates at the heart of this ecosystem. Our procurement team sources marine spare parts, hotel kitchen equipment, safety gear, and engineering supplies from top manufacturers in Europe, Asia, and the Americas, consolidating shipments through UAE ports for delivery to clients across the Middle East, Africa, and South Asia.</p>
+                            <p>Our relationships with over 200 global manufacturers, combined with the UAE's trade-friendly infrastructure, allow us to offer competitive pricing, fast turnaround, and reliable quality assurance � the three pillars that keep international buyers choosing the UAE for their procurement needs.</p>
                             <h4>Looking Ahead</h4>
                             <p>With the UAE government investing heavily in digital trade platforms, smart logistics, and sustainable shipping initiatives, the country's position as the world's preferred trade hub will only strengthen in the coming decade. HAMI is committed to evolving with this landscape, incorporating digital procurement tools and sustainable sourcing practices to continue serving our clients at the highest level.</p>
                         </div>
@@ -500,9 +504,9 @@
                     </div>
                 </article>
 
-                <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                <!-- ───────────────────────────────────────────
                      Blog Article 2
-                     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+                     ─────────────────────────────────────────── -->
                 <article class="blog-card animate-on-scroll" data-category="marine" itemscope itemtype="https://schema.org/BlogPosting">
                     <div class="blog-card-image">
                         <span class="blog-card-category">Marine</span>
@@ -517,18 +521,18 @@
                         <p class="blog-card-excerpt" itemprop="description">Unplanned downtime can cost vessel operators thousands of dollars per day. From turbocharger assemblies to marine pumps, we explore the essential spare parts that every ship manager should maintain in inventory.</p>
                         <div class="blog-full-content">
                             <h4>The True Cost of Downtime</h4>
-                            <p>For a mid-size cargo vessel, unplanned downtime can cost between $10,000 and $30,000 per day when you factor in port charges, crew costs, charter penalties, and lost revenue. Having the right spare parts on board or in a nearby warehouse can reduce repair turnaround from weeks to days — or even hours.</p>
+                            <p>For a mid-size cargo vessel, unplanned downtime can cost between $10,000 and $30,000 per day when you factor in port charges, crew costs, charter penalties, and lost revenue. Having the right spare parts on board or in a nearby warehouse can reduce repair turnaround from weeks to days � or even hours.</p>
                             <h4>The Essential Spare Parts List</h4>
-                            <p><strong>1. Turbocharger Components</strong> — Cartridge assemblies, bearings, and nozzle rings for the main and auxiliary engines are among the most critical items. Turbocharger failure can reduce engine output by 30-50%.</p>
-                            <p><strong>2. Fuel Injection Pumps & Nozzles</strong> — These wear components directly affect engine performance and fuel efficiency. Keeping a set of tested spares ensures quick replacement during routine maintenance.</p>
-                            <p><strong>3. Marine Pumps (Centrifugal & Gear)</strong> — Cooling water pumps, lube oil pumps, and bilge pumps are essential for vessel safety. Impeller kits and mechanical seals should always be in stock.</p>
-                            <p><strong>4. Gasket Sets & O-Rings</strong> — Often overlooked, these sealing components are needed for virtually every maintenance task. A comprehensive gasket kit for the main engine can save days of waiting.</p>
-                            <p><strong>5. Filters (Oil, Fuel, Air)</strong> — Regular filter changes are the first line of defense for engine longevity. Stock a minimum 6-month supply based on your PM schedule.</p>
-                            <p><strong>6. Bearings (Main & Connecting Rod)</strong> — Engine bearings are high-wear items. Having them pre-ordered and classified by size ensures readiness for drydock or emergency repairs.</p>
-                            <p><strong>7. Electrical Components</strong> — Alternator parts, voltage regulators, and critical relay switches can prevent blackout situations on board.</p>
-                            <p><strong>8. Valves (Safety, Relief, Gate)</strong> — Valve failures in the cooling or steam systems can lead to catastrophic damage. Keep spare valves for each critical system.</p>
-                            <p><strong>9. Stern Tube Seals</strong> — A stern tube seal failure can flood the engine room. These are long-lead items that should always be available in your spares inventory.</p>
-                            <p><strong>10. Cathodic Protection Anodes</strong> — Zinc and aluminum anodes for hull protection need regular replacement. HAMI stocks a wide range of anode types for different vessel configurations.</p>
+                            <p><strong>1. Turbocharger Components</strong> � Cartridge assemblies, bearings, and nozzle rings for the main and auxiliary engines are among the most critical items. Turbocharger failure can reduce engine output by 30-50%.</p>
+                            <p><strong>2. Fuel Injection Pumps & Nozzles</strong> � These wear components directly affect engine performance and fuel efficiency. Keeping a set of tested spares ensures quick replacement during routine maintenance.</p>
+                            <p><strong>3. Marine Pumps (Centrifugal & Gear)</strong> � Cooling water pumps, lube oil pumps, and bilge pumps are essential for vessel safety. Impeller kits and mechanical seals should always be in stock.</p>
+                            <p><strong>4. Gasket Sets & O-Rings</strong> � Often overlooked, these sealing components are needed for virtually every maintenance task. A comprehensive gasket kit for the main engine can save days of waiting.</p>
+                            <p><strong>5. Filters (Oil, Fuel, Air)</strong> � Regular filter changes are the first line of defense for engine longevity. Stock a minimum 6-month supply based on your PM schedule.</p>
+                            <p><strong>6. Bearings (Main & Connecting Rod)</strong> � Engine bearings are high-wear items. Having them pre-ordered and classified by size ensures readiness for drydock or emergency repairs.</p>
+                            <p><strong>7. Electrical Components</strong> � Alternator parts, voltage regulators, and critical relay switches can prevent blackout situations on board.</p>
+                            <p><strong>8. Valves (Safety, Relief, Gate)</strong> � Valve failures in the cooling or steam systems can lead to catastrophic damage. Keep spare valves for each critical system.</p>
+                            <p><strong>9. Stern Tube Seals</strong> � A stern tube seal failure can flood the engine room. These are long-lead items that should always be available in your spares inventory.</p>
+                            <p><strong>10. Cathodic Protection Anodes</strong> � Zinc and aluminum anodes for hull protection need regular replacement. HAMI stocks a wide range of anode types for different vessel configurations.</p>
                             <h4>HAMI's Marine Spares Advantage</h4>
                             <p>With over 1,500+ marine products in our catalog and established relationships with OEM manufacturers worldwide, HAMI provides rapid sourcing of critical spare parts. Our Sharjah-based warehouse maintains stock of fast-moving items, and our procurement team can source specialized parts with competitive lead times. Contact us to set up a standing spares management agreement for your fleet.</p>
                         </div>
@@ -542,9 +546,9 @@
                     </div>
                 </article>
 
-                <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                <!-- ───────────────────────────────────────────
                      Blog Article 3
-                     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+                     ─────────────────────────────────────────── -->
                 <article class="blog-card animate-on-scroll" data-category="hospitality" itemscope itemtype="https://schema.org/BlogPosting">
                     <div class="blog-card-image">
                         <span class="blog-card-category">Hospitality</span>
@@ -567,9 +571,9 @@
                             <h4>Next-Gen Pool & Water Treatment</h4>
                             <p>Resort pools are getting smarter too. UV and ozone-based water treatment systems that reduce chlorine usage, automated pH balancing systems, and energy-efficient variable-speed pumps are the new standard. HAMI supplies complete pool equipment packages from leading manufacturers including filtration systems, heat pumps, and chemical dosing equipment.</p>
                             <h4>Sustainable & Guest-Centric Design</h4>
-                            <p>Sustainability is no longer optional — it's a brand differentiator. Hotels are investing in LED lighting retrofits, smart room controls, water recycling systems, and eco-friendly laundry equipment. HAMI's product catalog includes a growing range of sustainable hospitality solutions that help hotels achieve Green Globe and LEED certifications.</p>
+                            <p>Sustainability is no longer optional � it's a brand differentiator. Hotels are investing in LED lighting retrofits, smart room controls, water recycling systems, and eco-friendly laundry equipment. HAMI's product catalog includes a growing range of sustainable hospitality solutions that help hotels achieve Green Globe and LEED certifications.</p>
                             <h4>Partner with HAMI for Your Next Hotel Project</h4>
-                            <p>Whether you're building a new resort or upgrading existing facilities, HAMI's Hotel division offers end-to-end procurement support — from equipment specification and vendor selection to delivery and installation coordination. Contact us for a consultation.</p>
+                            <p>Whether you're building a new resort or upgrading existing facilities, HAMI's Hotel division offers end-to-end procurement support � from equipment specification and vendor selection to delivery and installation coordination. Contact us for a consultation.</p>
                         </div>
                         <div class="blog-card-footer">
                             <a href="#" class="blog-read-more" data-expanded="false">Read More <i class="fas fa-arrow-right"></i></a>
@@ -581,9 +585,9 @@
                     </div>
                 </article>
 
-                <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                <!-- ───────────────────────────────────────────
                      Blog Article 4
-                     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+                     ─────────────────────────────────────────── -->
                 <article class="blog-card animate-on-scroll" data-category="engineering" itemscope itemtype="https://schema.org/BlogPosting">
                     <div class="blog-card-image">
                         <span class="blog-card-category">Engineering</span>
@@ -595,7 +599,7 @@
                             <span><i class="fas fa-clock"></i> 5 min read</span>
                         </div>
                         <h3 class="blog-card-title" itemprop="headline">The Complete Guide to Engineering Procurement in the Middle East</h3>
-                        <p class="blog-card-excerpt" itemprop="description">Sourcing engineering and technical equipment in the Middle East comes with unique challenges — from compliance with regional standards to managing complex logistics across GCC countries.</p>
+                        <p class="blog-card-excerpt" itemprop="description">Sourcing engineering and technical equipment in the Middle East comes with unique challenges � from compliance with regional standards to managing complex logistics across GCC countries.</p>
                         <div class="blog-full-content">
                             <h4>Understanding the GCC Procurement Landscape</h4>
                             <p>The Middle East's engineering sector is booming, driven by infrastructure mega-projects, energy sector investments, and industrial diversification programs. However, procurement in this region requires navigating a complex web of local regulations, import duties, certification requirements, and cultural business practices that differ significantly from Western markets.</p>
@@ -620,9 +624,9 @@
                     </div>
                 </article>
 
-                <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                <!-- ───────────────────────────────────────────
                      Blog Article 5
-                     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+                     ─────────────────────────────────────────── -->
                 <article class="blog-card animate-on-scroll" data-category="sustainability" itemscope itemtype="https://schema.org/BlogPosting">
                     <div class="blog-card-image">
                         <span class="blog-card-category">Sustainability</span>
@@ -641,9 +645,9 @@
                             <h4>Impact on Marine Equipment Demand</h4>
                             <p>The green shipping revolution is creating massive shifts in equipment demand. Low-sulfur compatible fuel systems, exhaust gas cleaning systems (scrubbers), shore power connection equipment, and energy-efficient propulsion components are seeing unprecedented demand. HAMI's marine division has adapted its product catalog to include these emerging technology categories.</p>
                             <h4>Energy-Efficient Deck Equipment</h4>
-                            <p>Modern deck equipment is becoming smarter and more energy-efficient. Variable frequency drive (VFD) winches, LED navigation and deck lighting, and energy-recovery crane systems all contribute to reducing a vessel's overall energy consumption. These upgrades not only help meet IMO targets but also reduce operating costs — a double win for shipowners.</p>
+                            <p>Modern deck equipment is becoming smarter and more energy-efficient. Variable frequency drive (VFD) winches, LED navigation and deck lighting, and energy-recovery crane systems all contribute to reducing a vessel's overall energy consumption. These upgrades not only help meet IMO targets but also reduce operating costs � a double win for shipowners.</p>
                             <h4>Alternative Fuels & Their Supply Chain Impact</h4>
-                            <p>LNG, methanol, ammonia, and hydrogen are emerging as alternative marine fuels. Each brings unique supply chain requirements — from specialized storage tanks and fuel handling systems to modified engine components and safety equipment. Ports in the UAE, particularly Abu Dhabi and Fujairah, are investing in alternative fuel bunkering infrastructure, positioning the region as a leader in the green shipping transition.</p>
+                            <p>LNG, methanol, ammonia, and hydrogen are emerging as alternative marine fuels. Each brings unique supply chain requirements � from specialized storage tanks and fuel handling systems to modified engine components and safety equipment. Ports in the UAE, particularly Abu Dhabi and Fujairah, are investing in alternative fuel bunkering infrastructure, positioning the region as a leader in the green shipping transition.</p>
                             <h4>Digital Solutions for Emission Monitoring</h4>
                             <p>Fleet management software with real-time emission monitoring capabilities is becoming essential. These systems track fuel consumption, voyage optimization data, and emission levels to help ship operators maintain compliance with CII ratings. HAMI can source and supply the sensor systems and monitoring hardware that integrate with these platforms.</p>
                             <h4>How HAMI Supports the Green Transition</h4>
@@ -659,9 +663,9 @@
                     </div>
                 </article>
 
-                <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                <!-- ───────────────────────────────────────────
                      Blog Article 6
-                     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+                     ─────────────────────────────────────────── -->
                 <article class="blog-card animate-on-scroll" data-category="uae" itemscope itemtype="https://schema.org/BlogPosting">
                     <div class="blog-card-image">
                         <span class="blog-card-category">UAE & Trade</span>
@@ -676,16 +680,16 @@
                         <p class="blog-card-excerpt" itemprop="description">Often overshadowed by neighboring Dubai, Sharjah has quietly built a formidable maritime and industrial base. With the Hamriyah Free Zone and growing port capacity, the emirate offers unique advantages for trading companies.</p>
                         <div class="blog-full-content">
                             <h4>Sharjah: The Third Largest Emirate With Big Ambitions</h4>
-                            <p>While Dubai grabs headlines, Sharjah — the UAE's third largest emirate by area — has been steadily building an industrial and maritime ecosystem that rivals its neighbors in value, if not in flash. Under the leadership of His Highness Sheikh Dr. Sultan bin Muhammad Al Qasimi, Sharjah has invested strategically in ports, free zones, and educational institutions that support the trading sector.</p>
+                            <p>While Dubai grabs headlines, Sharjah � the UAE's third largest emirate by area � has been steadily building an industrial and maritime ecosystem that rivals its neighbors in value, if not in flash. Under the leadership of His Highness Sheikh Dr. Sultan bin Muhammad Al Qasimi, Sharjah has invested strategically in ports, free zones, and educational institutions that support the trading sector.</p>
                             <h4>Hamriyah Free Zone: A Hidden Gem</h4>
-                            <p>The Hamriyah Free Zone Authority (HFZA) spans over 25 square kilometers and hosts more than 6,500 companies from 163 countries. It's particularly strong in maritime, oil & gas, and industrial trading sectors. Companies operating in HFZ enjoy 100% ownership, 15-year renewable tax exemptions, on-site customs clearance, and direct port access — making it one of the most cost-effective bases for trading operations in the entire GCC.</p>
+                            <p>The Hamriyah Free Zone Authority (HFZA) spans over 25 square kilometers and hosts more than 6,500 companies from 163 countries. It's particularly strong in maritime, oil & gas, and industrial trading sectors. Companies operating in HFZ enjoy 100% ownership, 15-year renewable tax exemptions, on-site customs clearance, and direct port access � making it one of the most cost-effective bases for trading operations in the entire GCC.</p>
                             <h4>Dual-Coast Advantage</h4>
-                            <p>Sharjah is the only emirate with coastline on both the Arabian Gulf (west) and the Gulf of Oman (east). The deepwater port of Khorfakkan provides direct access to Indian Ocean shipping routes without transiting the Strait of Hormuz — a strategic advantage during times of regional tension. This dual-coast positioning is invaluable for trading companies handling time-sensitive marine supplies.</p>
+                            <p>Sharjah is the only emirate with coastline on both the Arabian Gulf (west) and the Gulf of Oman (east). The deepwater port of Khorfakkan provides direct access to Indian Ocean shipping routes without transiting the Strait of Hormuz � a strategic advantage during times of regional tension. This dual-coast positioning is invaluable for trading companies handling time-sensitive marine supplies.</p>
                             <h4>Sharjah Maritime Academy & Talent Pipeline</h4>
                             <p>The emirate's investment in maritime education through the Sharjah Maritime Academy ensures a steady pipeline of qualified maritime professionals. For companies like HAMI, this means access to knowledgeable technical staff who understand both the commercial and engineering aspects of marine supply.</p>
                             <h4>HAMI's Sharjah Advantage</h4>
                             <p>As a company registered under the Sharjah Economic Department, Al Hamidiya General Trading LLC benefits directly from the emirate's trading infrastructure. Our proximity to Hamriyah Free Zone, Sharjah Airport International Free Zone (SAIF Zone), and both coastlines allows us to serve clients with speed and efficiency that larger, Dubai-based competitors often can't match for industrial and marine products.</p>
-                            <p>Whether you're a shipowner needing urgent spare parts delivery to a vessel at Khorfakkan or a hotel developer sourcing equipment for a new project, Sharjah's infrastructure — and HAMI's local expertise — combine to deliver exceptional service. Contact us to experience the Sharjah advantage firsthand.</p>
+                            <p>Whether you're a shipowner needing urgent spare parts delivery to a vessel at Khorfakkan or a hotel developer sourcing equipment for a new project, Sharjah's infrastructure � and HAMI's local expertise � combine to deliver exceptional service. Contact us to experience the Sharjah advantage firsthand.</p>
                         </div>
                         <div class="blog-card-footer">
                             <a href="#" class="blog-read-more" data-expanded="false">Read More <i class="fas fa-arrow-right"></i></a>
@@ -709,7 +713,7 @@
             <div class="blog-newsletter animate-on-scroll">
                 <div class="uae-accent-line"></div>
                 <h3>Stay Updated with HAMI Insights</h3>
-                <p>Get industry insights, product updates, and trade news delivered to your inbox — or chat with us directly on WhatsApp.</p>
+                <p>Get industry insights, product updates, and trade news delivered to your inbox � or chat with us directly on WhatsApp.</p>
                 <div class="newsletter-form">
                     <input type="email" placeholder="Enter your email address" aria-label="Email for newsletter">
                     <button type="button"><i class="fas fa-paper-plane"></i> Subscribe</button>
@@ -769,7 +773,7 @@
             <div class="shop-promo-inner">
                 <div class="promo-icon"><i class="fas fa-shopping-bag"></i></div>
                 <h2>Looking for Our Products?</h2>
-                <p>Explore our online shop for marine, engineering, and safety products — ready to order.</p>
+                <p>Explore our online shop for marine, engineering, and safety products � ready to order.</p>
                 <a href="shop.html" class="btn-shop-cta">Visit Shop <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
@@ -788,8 +792,8 @@
                             <img src="images/HAMI_Logo.jpeg" alt="Al Hamidiya General Trading LLC Logo" class="footer-logo">
                             <h3>Al Hamidiya <span>General Trading LLC</span></h3>
                         </div>
-                        <p class="footer-text">Al Hamidiya General Trading LLC (HAMI) — <strong>Hotel And Marine Innovations</strong>. Your trusted partner for global engineering and marine solutions from Sharjah, UAE.</p>
-                        <p class="footer-arabic" dir="rtl">الحميدية للتجارة العامة ذ.م.م</p>
+                        <p class="footer-text">Al Hamidiya General Trading LLC (HAMI) � <strong>Hotel And Marine Innovations</strong>. Your trusted partner for global engineering and marine solutions from Sharjah, UAE.</p>
+                        <p class="footer-arabic" dir="rtl">???????? ??????? ?????? ?.?.?</p>
                         <div class="footer-social">
                             <a href="https://wa.me/971501722409?text=Hello%21%20I%20am%20interested%20in%20HAMI%20LLC%20services." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -807,6 +811,7 @@
                             <li><a href="services.html">Services</a></li>
                             <li><a href="products.html">Products</a></li>
                             <li><a href="industries.html">Industries</a></li>
+                            <li><a href="partnership.html">Partnership</a></li>
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul>
@@ -851,7 +856,7 @@
             
             <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p>&copy; <span id="currentYear">2026</span> Al Hamidiya General Trading LLC (الحميدية للتجارة العامة ذ.م.م) — UAE. All Rights Reserved.</p>
+                <p>&copy; <span id="currentYear">2026</span> Al Hamidiya General Trading LLC (???????? ??????? ?????? ?.?.?) � UAE. All Rights Reserved.</p>
                 <p class="footer-credit">Designed &amp; Developed by <strong class="footer-credit-highlight">XENORA Technologies</strong></p>
             </div>
         </div>
@@ -881,7 +886,7 @@
     (function() {
         'use strict';
 
-        // â”€â”€â”€ Blog Tag Filtering â”€â”€â”€
+        // ─── Blog Tag Filtering ───
         const tags = document.querySelectorAll('.blog-tag');
         const cards = document.querySelectorAll('.blog-card');
 
@@ -907,12 +912,12 @@
             });
         });
 
-        // â”€â”€â”€ Active tag style â”€â”€â”€
+        // ─── Active tag style ───
         const style = document.createElement('style');
         style.textContent = `.active-tag { border-color: var(--orange-accent) !important; color: var(--white) !important; background: var(--orange-accent) !important; }`;
         document.head.appendChild(style);
 
-        // â”€â”€â”€ Read More Toggle â”€â”€â”€
+        // ─── Read More Toggle ───
         const readMoreLinks = document.querySelectorAll('.blog-read-more');
         readMoreLinks.forEach(function(link) {
             link.addEventListener('click', function(e) {
@@ -950,7 +955,7 @@
             });
         });
 
-        // â”€â”€â”€ Reading time animation on scroll â”€â”€â”€
+        // ─── Reading time animation on scroll ───
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {

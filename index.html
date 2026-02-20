@@ -87,13 +87,17 @@
                         <a class="nav-link" href="products.html">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="industries.html">Industries</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link nav-shop-highlight" href="shop.html"><i class="fas fa-shopping-cart me-1"></i> Shop</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
+                    <li class="nav-item nav-more-dropdown">
+                        <a class="nav-link nav-more-toggle" href="#" role="button" aria-expanded="false" aria-haspopup="true">
+                            More <i class="fas fa-chevron-down nav-more-arrow"></i>
+                        </a>
+                        <ul class="nav-more-menu">
+                            <li><a href="industries.html"><i class="fas fa-industry"></i> Industries</a></li>
+                            <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                            <li><a href="partnership.html"><i class="fas fa-handshake"></i> Partnership</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
@@ -195,9 +199,61 @@
     </section>
 
     <!-- ============================================
+    Why Choose Us Section
+    ============================================ -->
+    <section class="why-choose section-light" id="why-choose">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="section-title animate-on-scroll">
+                <h2>Why Choose HAMI</h2>
+                <p>Our commitment to excellence sets us apart in the global sourcing and engineering industry.</p>
+            </div>
+            
+            <!-- Why Choose Grid -->
+            <div class="why-choose-grid">
+                <!-- Card 1 -->
+                <div class="why-card animate-on-scroll animate-delay-1 card-3d-hover">
+                    <div class="icon-box">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h4>Global Sourcing Network</h4>
+                    <p>Access to manufacturers and suppliers worldwide, ensuring competitive pricing and product availability.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="why-card animate-on-scroll animate-delay-2 card-3d-hover">
+                    <div class="icon-box">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h4>Engineering Expertise</h4>
+                    <p>Technical knowledge and industry experience to recommend the right solutions for your requirements.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="why-card animate-on-scroll animate-delay-3 card-3d-hover">
+                    <div class="icon-box">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h4>Reliable Logistics</h4>
+                    <p>Efficient supply chain management with timely delivery and comprehensive customs handling.</p>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="why-card animate-on-scroll animate-delay-4 card-3d-hover">
+                    <div class="icon-box">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h4>Quality Assurance</h4>
+                    <p>Rigorous quality control processes ensuring all products meet international standards and specifications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
     Services Section
     ============================================ -->
-    <section class="services-section section-light" id="services">
+    <section class="services-section" id="services">
         <div class="container">
             <!-- Section Title -->
             <div class="section-title animate-on-scroll">
@@ -209,7 +265,7 @@
             <div class="row g-4">
                 <!-- Service Card 1 -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="service-card animate-on-scroll animate-delay-1">
+                    <div class="service-card animate-on-scroll animate-delay-1 card-3d-hover">
                         <div class="icon-box">
                             <i class="fas fa-ship"></i>
                         </div>
@@ -223,7 +279,7 @@
                 
                 <!-- Service Card 2 -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="service-card animate-on-scroll animate-delay-2">
+                    <div class="service-card animate-on-scroll animate-delay-2 card-3d-hover">
                         <div class="icon-box">
                             <i class="fas fa-cogs"></i>
                         </div>
@@ -237,7 +293,7 @@
                 
                 <!-- Service Card 3 -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="service-card animate-on-scroll animate-delay-3">
+                    <div class="service-card animate-on-scroll animate-delay-3 card-3d-hover">
                         <div class="icon-box">
                             <i class="fas fa-hotel"></i>
                         </div>
@@ -251,7 +307,7 @@
                 
                 <!-- Service Card 4 -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="service-card animate-on-scroll animate-delay-4">
+                    <div class="service-card animate-on-scroll animate-delay-4 card-3d-hover">
                         <div class="icon-box">
                             <i class="fas fa-truck"></i>
                         </div>
@@ -269,7 +325,7 @@
     <!-- ============================================
     Industries Section
     ============================================ -->
-    <section class="industries-section" id="industries">
+    <section class="industries-section section-light" id="industries">
         <div class="container">
             <!-- Section Title -->
             <div class="section-title animate-on-scroll">
@@ -345,52 +401,50 @@
     </section>
 
     <!-- ============================================
-    Why Choose Us Section
+    Official Distribution Partner Section
     ============================================ -->
-    <section class="why-choose section-light" id="why-choose">
+    <section class="partner-section" id="official-partner">
+        <div class="partner-bg-lines" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
         <div class="container">
-            <!-- Section Title -->
             <div class="section-title animate-on-scroll">
-                <h2>Why Choose HAMI</h2>
-                <p>Our commitment to excellence sets us apart in the global sourcing and engineering industry.</p>
+                <h2>Official Distribution <span class="text-accent">Partner</span></h2>
+                <p>HAMI LLC is the sole authorized distributor of Viking Electronics products in the United Arab Emirates.</p>
             </div>
-            
-            <!-- Why Choose Grid -->
-            <div class="why-choose-grid">
-                <!-- Card 1 -->
-                <div class="why-card animate-on-scroll animate-delay-1">
-                    <div class="icon-box">
-                        <i class="fas fa-globe"></i>
+            <div class="partner-content">
+                <!-- Logo Side -->
+                <div class="partner-logos animate-on-scroll">
+                    <div class="partner-logo-card card-3d-hover">
+                        <img src="images/HAMI_Logo.jpeg" alt="HAMI LLC Official Logo" class="partner-logo-img">
+                        <span class="partner-logo-label">HAMI LLC</span>
                     </div>
-                    <h4>Global Sourcing Network</h4>
-                    <p>Access to manufacturers and suppliers worldwide, ensuring competitive pricing and product availability.</p>
+                    <div class="partner-handshake" aria-hidden="true">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="partner-logo-card card-3d-hover">
+                        <img src="images/viking_logo.webp" alt="Viking Electronics Official Logo" class="partner-logo-img">
+                        <span class="partner-logo-label">Viking Electronics</span>
+                    </div>
                 </div>
-                
-                <!-- Card 2 -->
-                <div class="why-card animate-on-scroll animate-delay-2">
-                    <div class="icon-box">
-                        <i class="fas fa-tools"></i>
+                <!-- Content Side -->
+                <div class="partner-info animate-on-scroll">
+                    <h3>Exclusive UAE Distribution</h3>
+                    <p>As the official and sole distributor, HAMI LLC brings Viking Electronics' world-class communication and security solutions to the UAE market. Our partnership ensures authentic products, local technical support, and competitive pricing for all sectors.</p>
+                    <ul class="partner-highlights">
+                        <li><i class="fas fa-shield-alt"></i> <span>Authorized & Certified Distributor</span></li>
+                        <li><i class="fas fa-headset"></i> <span>Dedicated Local Technical Support</span></li>
+                        <li><i class="fas fa-box-open"></i> <span>Full Product Range Availability</span></li>
+                        <li><i class="fas fa-tags"></i> <span>Competitive Regional Pricing</span></li>
+                    </ul>
+                    <div class="partner-cta-buttons">
+                        <a href="partnership.html" class="btn btn-primary">
+                            <i class="fas fa-handshake"></i> Learn About Partnership
+                        </a>
+                        <a href="https://vikingelectronics.com/" target="_blank" rel="noopener" class="btn btn-outline-primary">
+                            <i class="fas fa-external-link-alt"></i> Visit Viking Electronics
+                        </a>
                     </div>
-                    <h4>Engineering Expertise</h4>
-                    <p>Technical knowledge and industry experience to recommend the right solutions for your requirements.</p>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="why-card animate-on-scroll animate-delay-3">
-                    <div class="icon-box">
-                        <i class="fas fa-shipping-fast"></i>
-                    </div>
-                    <h4>Reliable Logistics</h4>
-                    <p>Efficient supply chain management with timely delivery and comprehensive customs handling.</p>
-                </div>
-                
-                <!-- Card 4 -->
-                <div class="why-card animate-on-scroll animate-delay-4">
-                    <div class="icon-box">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h4>Quality Assurance</h4>
-                    <p>Rigorous quality control processes ensuring all products meet international standards and specifications.</p>
                 </div>
             </div>
         </div>
@@ -433,7 +487,7 @@
     <!-- ============================================
     Product Categories Section
     ============================================ -->
-    <section class="products-section" id="products-preview">
+    <section class="products-section section-light" id="products-preview">
         <div class="container">
             <!-- Section Title -->
             <div class="section-title animate-on-scroll">
@@ -445,7 +499,7 @@
             <div class="row g-4">
                 <!-- Product Card 1 -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="product-card animate-on-scroll">
+                    <div class="product-card animate-on-scroll card-3d-hover">
                         <div class="product-image">
                             <span class="category-badge">Marine</span>
                             <i class="fas fa-bolt"></i>
@@ -459,7 +513,7 @@
                 
                 <!-- Product Card 2 -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="product-card animate-on-scroll animate-delay-1">
+                    <div class="product-card animate-on-scroll animate-delay-1 card-3d-hover">
                         <div class="product-image">
                             <span class="category-badge">Marine</span>
                             <i class="fas fa-water"></i>
@@ -473,7 +527,7 @@
                 
                 <!-- Product Card 3 -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="product-card animate-on-scroll animate-delay-2">
+                    <div class="product-card animate-on-scroll animate-delay-2 card-3d-hover">
                         <div class="product-image">
                             <span class="category-badge">Marine</span>
                             <i class="fas fa-cog"></i>
@@ -487,7 +541,7 @@
                 
                 <!-- Product Card 4 -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="product-card animate-on-scroll animate-delay-3">
+                    <div class="product-card animate-on-scroll animate-delay-3 card-3d-hover">
                         <div class="product-image">
                             <span class="category-badge">Hotel</span>
                             <i class="fas fa-utensils"></i>
@@ -501,7 +555,7 @@
                 
                 <!-- Product Card 5 -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="product-card animate-on-scroll animate-delay-4">
+                    <div class="product-card animate-on-scroll animate-delay-4 card-3d-hover">
                         <div class="product-image">
                             <span class="category-badge">Hotel</span>
                             <i class="fas fa-swimming-pool"></i>
@@ -515,7 +569,7 @@
                 
                 <!-- Product Card 6 -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="product-card animate-on-scroll animate-delay-4">
+                    <div class="product-card animate-on-scroll animate-delay-4 card-3d-hover">
                         <div class="product-image">
                             <span class="category-badge">Hotel</span>
                             <i class="fas fa-lightbulb"></i>
@@ -538,6 +592,72 @@
     </section>
 
     <!-- ============================================
+    Shop Promo Banner
+    ============================================ -->
+    <section class="shop-promo-banner">
+        <div class="container">
+            <div class="shop-promo-inner">
+                <div class="promo-icon"><i class="fas fa-shopping-bag"></i></div>
+                <h2>Looking for Our Products?</h2>
+                <p>Explore our online shop for marine, engineering, and safety products — ready to order.</p>
+                <a href="shop.html" class="btn-shop-cta">Visit Shop <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    Blog Preview Section
+    ============================================ -->
+    <section class="blog-preview-section section-light" id="blog-preview">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Latest from Our <span class="text-accent">Blog</span></h2>
+                <p>Stay updated with the latest industry news, insights, and tips from the HAMI team.</p>
+            </div>
+            <div class="blog-preview-grid">
+                <!-- Blog Card 1 -->
+                <div class="blog-preview-card animate-on-scroll card-3d-hover">
+                    <div class="blog-preview-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <div class="blog-preview-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Industry Insight</span>
+                    </div>
+                    <h4>Marine Supply Chain Trends in the UAE</h4>
+                    <p>Discover how the maritime industry in the UAE is evolving with new procurement strategies and supply chain innovations.</p>
+                </div>
+                <!-- Blog Card 2 -->
+                <div class="blog-preview-card animate-on-scroll animate-delay-1 card-3d-hover">
+                    <div class="blog-preview-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="blog-preview-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Technology</span>
+                    </div>
+                    <h4>Viking Electronics: Innovation in Communication</h4>
+                    <p>Explore how Viking Electronics' latest VoIP and emergency communication solutions are transforming building safety.</p>
+                </div>
+                <!-- Blog Card 3 -->
+                <div class="blog-preview-card animate-on-scroll animate-delay-2 card-3d-hover">
+                    <div class="blog-preview-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="blog-preview-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Safety</span>
+                    </div>
+                    <h4>Industrial Safety Standards in the Middle East</h4>
+                    <p>An overview of evolving safety regulations and how HAMI ensures compliance with international standards.</p>
+                </div>
+            </div>
+            <div class="text-center mt-5 animate-on-scroll">
+                <a href="blog.html" class="btn btn-primary btn-lg">
+                    Read More on Our Blog <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
     CTA Banner Section
     ============================================ -->
     <section class="cta-banner">
@@ -553,20 +673,6 @@
                         <i class="fab fa-whatsapp"></i> +971 50 172 2409
                     </a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-    Shop Promo Banner
-    ============================================ -->
-    <section class="shop-promo-banner">
-        <div class="container">
-            <div class="shop-promo-inner">
-                <div class="promo-icon"><i class="fas fa-shopping-bag"></i></div>
-                <h2>Looking for Our Products?</h2>
-                <p>Explore our online shop for marine, engineering, and safety products — ready to order.</p>
-                <a href="shop.html" class="btn-shop-cta">Visit Shop <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -603,6 +709,7 @@
                             <li><a href="services.html">Services</a></li>
                             <li><a href="products.html">Products</a></li>
                             <li><a href="industries.html">Industries</a></li>
+                            <li><a href="partnership.html">Partnership</a></li>
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul>
