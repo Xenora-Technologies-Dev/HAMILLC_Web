@@ -1,7 +1,7 @@
-/* ============================================
+﻿/* ============================================
    HAMI Bot - Chat Widget Module
    Simulated AI Assistant for HAMI LLC
-   Al Hamidiya General Trading LLC
+   Al Hamidiyah General Trading LLC
    الحميدية للتجارة العامة ذ.م.م
    ============================================ */
 
@@ -17,7 +17,7 @@
     const CONVERSATIONS = {
         greeting: {
             messages: [
-                "Ahoy! ⚓ I'm <strong>HAMI Bot</strong> — your friendly assistant from Al Hamidiya General Trading LLC!",
+                "Ahoy! ⚓ I'm <strong>HAMI Bot</strong> — your friendly assistant from Al Hamidiyah General Trading LLC!",
                 "I know all about <strong>Hotel And Marine Innovations</strong> — that's what HAMI stands for! 🏨🚢",
                 "How can I help you today? Pick an option below or just say hello! 😊"
             ],
@@ -89,7 +89,7 @@
         about: {
             userText: "Tell me about HAMI LLC",
             messages: [
-                "<strong>Al Hamidiya General Trading LLC</strong> — or as we like to call it, <strong>HAMI</strong>! 🏢",
+                "<strong>Al Hamidiyah General Trading LLC</strong> — or as we like to call it, <strong>HAMI</strong>! 🏢",
                 "HAMI stands for <strong>Hotel And Marine Innovations</strong>. We're incorporated under Sharjah Economic Department, UAE. <img src='https://flagcdn.com/w20/ae.png' alt='UAE' style='height:1em;vertical-align:middle;'>",
                 "In Arabic, we're known as <strong>الحميدية للتجارة العامة ذ.م.م</strong>",
                 "With 15+ years of experience, 500+ projects delivered, and partners in 30+ countries — we're your trusted global sourcing partner for marine, engineering, and hospitality sectors! 🌍"
@@ -232,7 +232,7 @@
                     <a href="${WHATSAPP_URL}" target="_blank" rel="noopener" class="hamibot-wa-link">
                         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                     </a>
-                    <p>Powered by Al Hamidiya General Trading LLC</p>
+                    <p>Powered by Al Hamidiyah General Trading LLC</p>
                 </div>
             </div>
 

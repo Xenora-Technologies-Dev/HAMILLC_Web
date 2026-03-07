@@ -312,6 +312,18 @@ document.addEventListener('DOMContentLoaded', function () {
     // ============================================
     // Partnership Page — Floating Particles
     // ============================================
+    // ============================================
+    // About Intro Video – HAMI end-screen overlay
+    // ============================================
+    var introVideo  = document.getElementById('aboutIntroVideo');
+    var videoOverlay = document.getElementById('aboutVideoEndOverlay');
+    if (introVideo && videoOverlay) {
+        introVideo.addEventListener('ended', function () {
+            videoOverlay.classList.add('visible');
+            videoOverlay.removeAttribute('aria-hidden');
+        });
+    }
+
     var particleContainer = document.getElementById('partnershipParticles');
     if (particleContainer) {
         for (var i = 0; i < 30; i++) {

@@ -496,39 +496,203 @@ section {
 
 .about-image {
     position: relative;
+    padding: 24px 24px 24px 24px;
+    margin: 20px 20px 20px 20px;
+}
+
+/* ── About Snapshot – Intro Video ───────────────────────── */
+.about-video-wrapper {
+    position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 20px 60px rgba(10,38,71,0.25), 0 8px 24px rgba(10,38,71,0.15);
+    z-index: 1;
+    border: 3px solid rgba(255,255,255,0.8);
+    aspect-ratio: 16 / 9;
+    background: var(--navy-blue);
 }
 
-.about-image img {
+.about-video {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
+    border-radius: inherit;
 }
 
+/* Overlay shown once the video finishes playing */
+.about-video-end-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(10,38,71,0.94) 0%, rgba(20,65,120,0.90) 100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.9s ease;
+    border-radius: inherit;
+}
+
+.about-video-end-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.about-video-hami-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 0.18em;
+    line-height: 1;
+    text-shadow: 0 4px 28px rgba(0,0,0,0.35);
+    display: block;
+}
+
+.about-video-hami-tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.85rem, 1.6vw, 1.15rem);
+    font-weight: 600;
+    color: #ff8c3a;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-top: 16px;
+    display: block;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    background: rgba(255,255,255,0.07);
+    padding: 7px 22px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,140,58,0.35);
+}
+
+/* Decorative corner accents */
 .about-image::before {
     content: '';
     position: absolute;
-    top: -20px;
-    left: -20px;
-    width: 100px;
-    height: 100px;
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 110px;
     background: var(--gradient-orange);
-    z-index: -1;
     border-radius: var(--radius-md);
+    z-index: 0;
+    opacity: 0.9;
 }
 
 .about-image::after {
     content: '';
     position: absolute;
-    bottom: -20px;
-    right: -20px;
-    width: 150px;
-    height: 150px;
-    border: 4px solid var(--navy-blue);
-    z-index: -1;
+    bottom: 0;
+    right: 0;
+    width: 140px;
+    height: 140px;
+    border: 5px solid var(--navy-blue);
     border-radius: var(--radius-md);
+    z-index: 0;
+    opacity: 0.6;
+}
+
+/* Inner wrapper clips the image with rounded corners & shadow */
+.about-image-wrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(10, 38, 71, 0.25), 0 8px 24px rgba(10, 38, 71, 0.15);
+    z-index: 1;
+    border: 3px solid rgba(255,255,255,0.8);
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease;
+}
+
+.about-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.about-image-wrapper:hover img {
+    transform: scale(1.04);
+}
+
+/* Subtle gradient overlay at the bottom */
+.about-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, rgba(10, 38, 71, 0.55) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* "Our Team" badge — bottom-left */
+.about-image-badge {
+    position: absolute;
+    bottom: 36px;
+    left: 36px;
+    background: var(--orange-accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.about-image-badge i {
+    font-size: 1rem;
+}
+
+/* "15+ Years" badge — top-right */
+.about-image-years {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--navy-blue);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(10, 38, 71, 0.35);
+    z-index: 3;
+    text-align: center;
+    border: 3px solid var(--orange-accent);
+}
+
+.about-image-years .years-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--orange-accent);
+    font-family: var(--font-poppins);
+}
+
+.about-image-years .years-number sup {
+    font-size: 0.75rem;
+    vertical-align: super;
+}
+
+.about-image-years .years-label {
+    font-size: 0.55rem;
+    line-height: 1.3;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    margin-top: 2px;
 }
 
 .about-text h2 { margin-bottom: 1.5rem; }
@@ -2565,17 +2729,17 @@ body.hamibot-active .back-to-top {
 /* Hero tagline (index.html hero section) */
 .hero-tagline {
     font-size: clamp(0.95rem, 1.5vw, 1.3rem);
-    color: rgba(255, 255, 255, 0.95);
+    color: #ffffff;
     margin-bottom: 10px;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    font-weight: 500;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(90deg, rgba(232, 93, 4, 0.15), transparent);
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.4);
+    background: linear-gradient(90deg, rgba(232, 93, 4, 0.30), rgba(232,93,4,0.05));
     display: inline-block;
-    padding: 6px 18px 6px 0;
-    border-left: 3px solid var(--orange-accent);
-    padding-left: 14px;
+    padding: 7px 20px 7px 14px;
+    border-left: 4px solid var(--orange-accent);
+    border-radius: 0 4px 4px 0;
 }
 
 /* Hero Arabic subtitle (about.html hero) */
@@ -3417,7 +3581,10 @@ body.hamibot-active .back-to-top {
     .partner-highlights { grid-template-columns: 1fr; }
 
     .about-snapshot-content { grid-template-columns: 1fr; gap: 40px; }
-    .about-image { order: -1; max-height: 400px; }
+    .about-image { order: -1; }
+    .about-image-badge { bottom: 28px; left: 28px; }
+    .about-image-years { width: 76px; height: 76px; }
+    .about-image-years .years-number { font-size: 1.2rem; }
     .service-detail-content { grid-template-columns: 1fr; gap: 40px; }
     .service-detail:nth-child(even) .service-detail-content { direction: ltr; }
     .service-icon-large { height: 250px; }
@@ -3881,12 +4048,9 @@ body.hamibot-active .back-to-top {
     transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.about-image:hover {
+.about-image:hover .about-image-wrapper {
     transform: perspective(800px) rotateY(5deg) rotateX(-3deg) translateZ(20px);
-}
-
-.about-image:hover img {
-    box-shadow: 20px 20px 60px rgba(10, 25, 47, 0.2);
+    box-shadow: 24px 24px 70px rgba(10, 25, 47, 0.28), 0 8px 24px rgba(10, 38, 71, 0.15);
 }
 
 /* Parallax depth layers */
