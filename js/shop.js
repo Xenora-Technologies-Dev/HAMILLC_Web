@@ -19,107 +19,57 @@
     'use strict';
 
     // ============================================
-    // 1. Product Catalogue Data
+    // 1. Product Catalogue Data (HAMI_PRODUCTS)
     // ============================================
-    // Placeholder product data — replace images/prices with real values as needed.
     const PRODUCTS = [
         {
             id: 1,
-            name: 'Marine-Grade Electrical Cable',
-            category: 'marine',
-            price: 125.00,
-            image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80',
-            description: 'High-quality marine electrical cables rated for shipboard and offshore use.'
-        },
-        {
-            id: 2,
-            name: 'Centrifugal Pump Assembly',
-            category: 'marine',
-            price: 890.00,
-            image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80',
-            description: 'Heavy-duty centrifugal pump for bilge, ballast and general marine service.'
-        },
-        {
-            id: 3,
-            name: 'Navigation Radar System',
-            category: 'marine',
-            price: 3450.00,
-            image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80',
-            description: 'X-band marine radar with chart overlay for commercial vessels.'
-        },
-        {
-            id: 4,
-            name: 'Industrial HVAC Unit',
+            name: 'Self Tapping Screw (Countersunk Head) DIN7982 SS304',
+            brand: 'Taiwan',
             category: 'engineering',
-            price: 2750.00,
-            image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80',
-            description: 'Packaged air-conditioning unit for industrial plants and marine engine rooms.'
+            price: 0.65,
+            image: 'images/Product_Images/Self_tapping_Screws_1.jpeg',
+            images: [
+                'images/Product_Images/Self_tapping_Screws_1.jpeg',
+                'images/Product_Images/Self_tapping_Screws_2.jpeg',
+                'images/Product_Images/Self_tapping_Screws_3.jpeg'
+            ],
+            description: 'DIN7982 stainless steel countersunk head self tapping screws used for marine, engineering and fabrication installations.',
+            material: 'SS304 Stainless Steel',
+            origin: 'Taiwan',
+            sizes: [
+                { size: '#12 x 4 inch',   price: 0.65 },
+                { size: '#12 x 3 inch',   price: 0.50 },
+                { size: '#12 x 2.5 inch', price: 0.35 }
+            ]
         },
         {
             id: 5,
-            name: 'Steel Gate Valve (DN150)',
-            category: 'engineering',
-            price: 320.00,
-            image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80',
-            description: 'Flanged gate valve, carbon steel body, for high-pressure piping systems.'
+            name: 'Bicycle Basket',
+            brand: 'Electra',
+            category: 'hospitality',
+            price: 230.00,
+            image: 'images/Product_Images/Bicycle_Basket.jpeg',
+            description: '34cm L x 25.5cm W x 25cm H. Durable steel mesh bicycle basket with powder coated finish. Includes mounting plate and handle.',
+            material: 'Steel Mesh',
+            color: 'Orange',
+            origin: 'Import'
         },
         {
             id: 6,
-            name: 'PLC Control Panel',
-            category: 'engineering',
-            price: 4100.00,
-            image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80',
-            description: 'Pre-wired PLC panel with HMI display for automation and monitoring.'
-        },
-        {
-            id: 7,
-            name: 'Commercial Kitchen Oven',
-            category: 'hospitality',
-            price: 1850.00,
-            image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80',
-            description: 'Convection oven with steam function for hotels and commercial kitchens.'
-        },
-        {
-            id: 8,
-            name: 'Pool Filtration System',
-            category: 'hospitality',
-            price: 1200.00,
-            image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80',
-            description: 'Sand filter and pump package for resort and hotel swimming pools.'
-        },
-        {
-            id: 9,
-            name: 'LED Hotel Lighting Kit',
-            category: 'hospitality',
-            price: 475.00,
-            image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80',
-            description: 'Energy-efficient LED downlight and decorative lighting package for guest rooms.'
-        },
-        {
-            id: 10,
-            name: 'SOLAS Life Jacket (Pack of 10)',
+            name: 'Handsfree Speaker Phone With Dialer E-30-EWP',
+            brand: 'Viking Electronics',
             category: 'safety',
-            price: 350.00,
-            image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80',
-            description: 'IMO / SOLAS approved life jackets with reflective tape and whistle.'
-        },
-        {
-            id: 11,
-            name: 'Fire Extinguisher Set',
-            category: 'safety',
-            price: 280.00,
-            image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80',
-            description: 'Dry powder and CO₂ fire extinguishers, marine-type approved.'
-        },
-        {
-            id: 12,
-            name: 'Breathing Apparatus (SCBA)',
-            category: 'safety',
-            price: 1650.00,
-            image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80',
-            description: 'Self-contained breathing apparatus for confined space and fire-fighting.'
+            price: 850.00,
+            image: 'images/Product_Images/Hands_Free_Speaker_Phone.jpeg',
+            description: 'Vandal resistant handsfree speaker phone with dialer designed for emergency communication. Features automatic noise canceling and stainless steel faceplate.\n\n• Automatic Noise Canceling (ANC)\n• 14 gauge 316 stainless steel faceplate\n• Heavy duty metal call button\n• Speaker and microphone protection screen\n• Security mounting screws',
+            material: '316 Stainless Steel',
+            origin: 'Viking Electronics'
         }
     ];
+
+    // Expose as global HAMI_PRODUCTS
+    window.HAMI_PRODUCTS = PRODUCTS;
 
     // ============================================
     // 2. Cart State Management
@@ -181,25 +131,163 @@
 
         if (shopEmpty) shopEmpty.style.display = 'none';
 
-        shopGrid.innerHTML = filtered.map(product => `
+        shopGrid.innerHTML = filtered.map(product => {
+            // Build description HTML — convert newlines and bullet points
+            const descHTML = product.description
+                .replace(/\n\n/g, '<br><br>')
+                .replace(/\n•/g, '<br>•');
+
+            const isVariable = product.sizes && product.sizes.length > 0;
+
+            // --- Image area: slider if multiple images, single image otherwise ---
+            let imageHTML;
+            if (product.images && product.images.length > 1) {
+                const slides = product.images.map((src, i) =>
+                    `<img src="${src}" alt="${product.name}" class="shop-slide${i === 0 ? ' active' : ''}" loading="lazy">`
+                ).join('');
+                const dots = product.images.map((_, i) =>
+                    `<span class="shop-slide-dot${i === 0 ? ' active' : ''}" data-idx="${i}"></span>`
+                ).join('');
+                imageHTML = `
+                    <div class="shop-product-slider" data-product="${product.id}">
+                        <span class="shop-badge">${product.category}</span>
+                        ${slides}
+                        <button class="shop-slide-arrow shop-slide-prev" data-dir="-1" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+                        <button class="shop-slide-arrow shop-slide-next" data-dir="1" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+                        <div class="shop-slide-dots">${dots}</div>
+                    </div>`;
+            } else {
+                imageHTML = `
+                    <div class="shop-product-img">
+                        <span class="shop-badge">${product.category}</span>
+                        <img src="${product.image}" alt="${product.name}" loading="lazy">
+                    </div>`;
+            }
+
+            // --- Size selector (radio buttons) for variable products ---
+            let sizeHTML = '';
+            if (isVariable) {
+                const radios = product.sizes.map((s, i) => `
+                    <label class="shop-size-option${i === 0 ? ' selected' : ''}">
+                        <input type="radio" name="size-${product.id}" value="${i}" ${i === 0 ? 'checked' : ''}>
+                        <span class="shop-size-label">${s.size}</span>
+                        <span class="shop-size-price">AED ${s.price.toFixed(2)}</span>
+                    </label>
+                `).join('');
+                sizeHTML = `<div class="shop-product-size" data-product="${product.id}">${radios}</div>`;
+            }
+
+            // --- Price display ---
+            const displayPrice = isVariable ? product.sizes[0].price : product.price;
+
+            return `
             <div class="shop-product-card animate-on-scroll" data-id="${product.id}">
-                <div class="shop-card-img">
-                    <span class="shop-badge">${product.category}</span>
-                    <img src="${product.image}" alt="${product.name}" loading="lazy">
-                </div>
-                <div class="shop-card-body">
-                    <h5>${product.name}</h5>
-                    <p class="shop-card-desc">${product.description}</p>
-                    <div class="shop-card-price">$${product.price.toFixed(2)}</div>
-                    <button class="shop-add-btn" onclick="HAMI_Cart.addToCart(${product.id})" id="addBtn-${product.id}">
-                        <i class="fas fa-cart-plus"></i> Add to Cart
-                    </button>
+                ${imageHTML}
+                <div class="shop-product-body">
+                    <h5 class="shop-product-title">${product.name}</h5>
+                    <div class="shop-product-brand">
+                        <i class="fas fa-industry"></i> Brand: ${product.brand}
+                    </div>
+                    <p class="shop-product-desc">${descHTML}</p>
+                    ${sizeHTML}
+                    <div class="shop-product-price" id="price-${product.id}">AED ${displayPrice.toFixed(2)}</div>
+                    <div class="shop-product-actions">
+                        <button class="shop-add-btn" onclick="HAMI_Cart.addToCart(${product.id})" id="addBtn-${product.id}">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
                 </div>
             </div>
-        `).join('');
+        `}).join('');
+
+        // Bind slider arrow & dot navigation
+        initSliders();
+
+        // Bind size-selector change events
+        initSizeSelectors();
 
         // Re-trigger scroll animations for newly rendered cards
         triggerScrollAnimations();
+    }
+
+    // ============================================
+    // 3b. Image Slider Controls
+    // ============================================
+
+    function initSliders() {
+        document.querySelectorAll('.shop-product-slider').forEach(slider => {
+            const slides = slider.querySelectorAll('.shop-slide');
+            const dots   = slider.querySelectorAll('.shop-slide-dot');
+            if (slides.length < 2) return;
+
+            function goTo(idx) {
+                slides.forEach(s => s.classList.remove('active'));
+                dots.forEach(d => d.classList.remove('active'));
+                slides[idx].classList.add('active');
+                dots[idx].classList.add('active');
+                slider.dataset.current = idx;
+            }
+
+            slider.dataset.current = 0;
+
+            slider.querySelectorAll('.shop-slide-arrow').forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    var cur = parseInt(slider.dataset.current, 10) || 0;
+                    var dir = parseInt(this.dataset.dir, 10);
+                    var next = (cur + dir + slides.length) % slides.length;
+                    goTo(next);
+                    resetAutoSlide();
+                });
+            });
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    goTo(parseInt(this.dataset.idx, 10));
+                    resetAutoSlide();
+                });
+            });
+
+            // Auto-slideshow: advance every 3 seconds
+            var autoInterval = null;
+            function startAutoSlide() {
+                autoInterval = setInterval(function () {
+                    var cur = parseInt(slider.dataset.current, 10) || 0;
+                    goTo((cur + 1) % slides.length);
+                }, 3000);
+            }
+            function resetAutoSlide() {
+                if (autoInterval) clearInterval(autoInterval);
+                startAutoSlide();
+            }
+            startAutoSlide();
+        });
+    }
+
+    // ============================================
+    // 3c. Size Selector — dynamic price update
+    // ============================================
+
+    function initSizeSelectors() {
+        document.querySelectorAll('.shop-product-size').forEach(container => {
+            var productId = parseInt(container.dataset.product, 10);
+            container.addEventListener('change', function (e) {
+                if (e.target.type !== 'radio') return;
+                var product = PRODUCTS.find(function (p) { return p.id === productId; });
+                if (!product || !product.sizes) return;
+                var idx = parseInt(e.target.value, 10);
+                var selected = product.sizes[idx];
+                // Update displayed price
+                var priceEl = document.getElementById('price-' + productId);
+                if (priceEl) priceEl.textContent = 'AED ' + selected.price.toFixed(2);
+                // Highlight selected option
+                container.querySelectorAll('.shop-size-option').forEach(function (opt) {
+                    opt.classList.remove('selected');
+                });
+                e.target.closest('.shop-size-option').classList.add('selected');
+            });
+        });
     }
 
     /**
@@ -256,15 +344,56 @@
         const product = PRODUCTS.find(p => p.id === productId);
         if (!product) return;
 
-        const existing = cart.find(item => item.product.id === productId);
+        // Resolve price and name for variable products (size selector)
+        let cartPrice = product.price;
+        let cartName  = product.name;
+        let cartId    = productId;
+
+        if (product.sizes && product.sizes.length > 0) {
+            const sizeContainer = document.querySelector('.shop-product-size[data-product="' + productId + '"]');
+            let selectedIdx = 0;
+            if (sizeContainer) {
+                const checked = sizeContainer.querySelector('input[type="radio"]:checked');
+                if (checked) selectedIdx = parseInt(checked.value, 10) || 0;
+            }
+            const variant = product.sizes[selectedIdx];
+            cartPrice = variant.price;
+            cartName  = product.name + ' (' + variant.size + ')';
+            // Use a unique cart id per variant so different sizes are separate items
+            cartId = productId * 100 + selectedIdx;
+        }
+
+        // Build the cart product object (keeps image for sidebar)
+        const cartProduct = {
+            id: cartId,
+            name: cartName,
+            price: cartPrice,
+            image: product.image
+        };
+
+        const existing = cart.find(item => item.product.id === cartId);
         if (existing) {
             existing.quantity += 1;
         } else {
-            cart.push({ product, quantity: 1 });
+            cart.push({ product: cartProduct, quantity: 1 });
         }
 
         saveCart(cart);
         updateCartUI();
+
+        // Bounce the FAB + toolbar button to draw attention
+        var cartFab = document.getElementById('cartFab');
+        if (cartFab) {
+            cartFab.classList.remove('cart-bounce');
+            void cartFab.offsetWidth;  // reflow to restart animation
+            cartFab.classList.add('cart-bounce');
+        }
+        var cartBtn = document.getElementById('cartBtn');
+        if (cartBtn) {
+            cartBtn.classList.remove('cart-bounce');
+            void cartBtn.offsetWidth;
+            cartBtn.classList.add('cart-bounce');
+        }
 
         // Brief "Added" feedback on the button
         const addBtn = document.getElementById('addBtn-' + productId);
@@ -277,7 +406,7 @@
             }, 1200);
         }
 
-        showToast(`${product.name} added to cart`);
+        showToast(`${cartName} added to cart`);
     }
 
     /**
@@ -381,7 +510,7 @@
                     </div>
                     <div class="cart-item-info">
                         <h6>${item.product.name}</h6>
-                        <span class="cart-item-price">$${item.product.price.toFixed(2)}</span>
+                        <span class="cart-item-price">AED ${item.product.price.toFixed(2)}</span>
                         <div class="cart-qty-controls">
                             <button onclick="HAMI_Cart.updateQty(${item.product.id}, -1)" aria-label="Decrease quantity">
                                 <i class="fas fa-minus"></i>
@@ -391,7 +520,7 @@
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
-                        <div class="cart-item-total">Line total: $${lineTotal.toFixed(2)}</div>
+                        <div class="cart-item-total">Line total: AED ${lineTotal.toFixed(2)}</div>
                     </div>
                     <button class="cart-item-remove" onclick="HAMI_Cart.removeFromCart(${item.product.id})" aria-label="Remove item">
                         <i class="fas fa-trash-alt"></i>
@@ -407,14 +536,15 @@
 
         // Update subtotal
         const subtotal = cart.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
-        if (cartSubtotalEl) cartSubtotalEl.textContent = '$' + subtotal.toFixed(2);
+        if (cartSubtotalEl) cartSubtotalEl.textContent = 'AED ' + subtotal.toFixed(2);
     }
 
     /**
-     * Update all cart count badges on the page
+     * Update all cart count badges and the sticky cart bar.
      */
     function updateCartUI() {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const subtotal   = cart.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
 
         // Desktop toolbar badge
         const cartCountEl = document.getElementById('cartCount');
@@ -423,6 +553,40 @@
         // Mobile FAB badge
         const cartFabBadge = document.getElementById('cartFabBadge');
         if (cartFabBadge) cartFabBadge.textContent = totalItems;
+
+        // Show / hide FAB based on cart contents
+        const cartFab = document.getElementById('cartFab');
+        if (cartFab) {
+            if (totalItems > 0) {
+                cartFab.classList.add('has-items');
+            } else {
+                cartFab.classList.remove('has-items');
+            }
+        }
+
+        // Toolbar cart button highlight
+        const cartBtn = document.getElementById('cartBtn');
+        if (cartBtn) {
+            if (totalItems > 0) {
+                cartBtn.classList.add('has-items');
+            } else {
+                cartBtn.classList.remove('has-items');
+            }
+        }
+
+        // Sticky cart bar at bottom
+        const cartBar     = document.getElementById('cartBar');
+        const cartBarText = document.getElementById('cartBarText');
+        if (cartBar) {
+            if (totalItems > 0 && shopSectionVisible) {
+                cartBar.classList.add('visible');
+                if (cartBarText) {
+                    cartBarText.textContent = totalItems + (totalItems === 1 ? ' item' : ' items') + ' — AED ' + subtotal.toFixed(2);
+                }
+            } else {
+                cartBar.classList.remove('visible');
+            }
+        }
     }
 
     // ============================================
@@ -456,11 +620,11 @@
             const lineTotal = item.product.price * item.quantity;
             grandTotal += lineTotal;
             body += `${index + 1}. ${item.product.name}\n`;
-            body += `   Qty: ${item.quantity}  |  Unit Price: $${item.product.price.toFixed(2)}  |  Subtotal: $${lineTotal.toFixed(2)}\n`;
+            body += `   Qty: ${item.quantity}  |  Unit Price: AED ${item.product.price.toFixed(2)}  |  Subtotal: AED ${lineTotal.toFixed(2)}\n`;
             body += '-----------------------------------------------\n';
         });
 
-        body += `\nGrand Total: $${grandTotal.toFixed(2)}\n\n`;
+        body += `\nGrand Total: AED ${grandTotal.toFixed(2)}\n\n`;
         body += 'Please provide a formal quotation for the above items.\n\n';
         body += 'Thank you.\n';
 
@@ -479,7 +643,8 @@
     let toastTimeout = null;
 
     /**
-     * Show a brief toast notification at the bottom of the screen.
+     * Show a brief toast notification at the bottom of the screen
+     * with a "View Cart" action.
      * @param {string} message
      */
     function showToast(message) {
@@ -492,7 +657,8 @@
             document.body.appendChild(toast);
         }
 
-        toast.textContent = message;
+        toast.innerHTML = '<span class="shop-toast-msg">' + message + '</span>'
+            + '<button class="shop-toast-action" onclick="HAMI_Cart.openSidebar()">View Cart <i class="fas fa-arrow-right"></i></button>';
         toast.classList.add('show');
 
         // Clear previous timeout
@@ -503,7 +669,41 @@
     }
 
     // ============================================
-    // 8. Initialisation
+    // 8. Cart-bar viewport scoping
+    // ============================================
+
+    /** True while the shop section is in (or near) the viewport */
+    var shopSectionVisible = true;
+
+    /**
+     * Use IntersectionObserver to track whether the shop products
+     * section is on-screen.  When the user scrolls past it (into
+     * the CTA banner / footer) the sticky cart bar is hidden so it
+     * doesn't overlap unrelated content.
+     */
+    function initCartBarVisibility() {
+        var shopSection = document.getElementById('shopProducts');
+        if (!shopSection || !('IntersectionObserver' in window)) return;
+
+        var observer = new IntersectionObserver(function (entries) {
+            shopSectionVisible = entries[0].isIntersecting;
+            var cartBar = document.getElementById('cartBar');
+            if (cartBar) {
+                if (!shopSectionVisible) {
+                    cartBar.classList.remove('visible');
+                } else {
+                    // Re-show only if cart actually has items
+                    var totalItems = cart.reduce(function (s, i) { return s + i.quantity; }, 0);
+                    if (totalItems > 0) cartBar.classList.add('visible');
+                }
+            }
+        }, { threshold: 0 });
+
+        observer.observe(shopSection);
+    }
+
+    // ============================================
+    // 9. Initialisation
     // ============================================
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -518,6 +718,9 @@
 
         // Sync cart badge counts on load
         updateCartUI();
+
+        // Hide sticky cart bar when user scrolls past the shop section
+        initCartBarVisibility();
     });
 
     // ============================================
@@ -526,6 +729,7 @@
     // ============================================
     window.HAMI_Cart = {
         addToCart: addToCart,
+        addItem: addToCart,       // alias requested by spec
         removeFromCart: removeFromCart,
         updateQty: updateQty,
         clearCart: clearCart,
@@ -533,5 +737,7 @@
         closeSidebar: closeSidebar,
         sendEnquiry: sendEnquiry
     };
+
+
 
 })();

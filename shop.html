@@ -125,12 +125,27 @@
     </section>
 
     <!-- ============================================
-    Floating Cart Button (Mobile)
+    Floating Cart Button
     ============================================ -->
     <button class="shop-cart-fab" id="cartFab" aria-label="Open Cart" onclick="HAMI_Cart.openSidebar()">
         <i class="fas fa-shopping-cart"></i>
         <span class="shop-cart-fab-badge" id="cartFabBadge">0</span>
     </button>
+
+    <!-- ============================================
+    Sticky Cart Bar (appears when cart has items)
+    ============================================ -->
+    <div class="shop-cart-bar" id="cartBar">
+        <div class="container shop-cart-bar-inner">
+            <div class="shop-cart-bar-info">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cartBarText">Your cart is empty</span>
+            </div>
+            <button class="shop-cart-bar-btn" onclick="HAMI_Cart.openSidebar()">
+                View Cart &amp; Enquire <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
 
     <!-- ============================================
     Shop Toolbar: Category Filter
@@ -149,7 +164,8 @@
                 <!-- Cart Summary (Desktop) -->
                 <button class="shop-cart-btn" id="cartBtn" onclick="HAMI_Cart.openSidebar()">
                     <i class="fas fa-shopping-cart"></i>
-                    Cart (<span id="cartCount">0</span>)
+                    <span>Cart</span>
+                    <span class="shop-cart-btn-badge" id="cartCount">0</span>
                 </button>
             </div>
         </div>
@@ -203,7 +219,7 @@
         <div class="cart-sidebar-footer" id="cartSidebarFooter">
             <div class="cart-subtotal">
                 <span>Subtotal:</span>
-                <strong id="cartSubtotal">$0.00</strong>
+                <strong id="cartSubtotal">AED 0.00</strong>
             </div>
             <button class="btn btn-primary w-100 cart-enquiry-btn" onclick="HAMI_Cart.sendEnquiry()">
                 <i class="fas fa-envelope"></i> Send Enquiry
