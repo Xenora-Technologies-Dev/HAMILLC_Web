@@ -1,0 +1,19 @@
+# robots.txt for www.hamillc.com
+# Al Hamidiyah General Trading LLC (HAMI)
+
+User-agent: *
+Allow: /
+Disallow: /docs/
+
+# Sitemap
+Sitemap: https://www.hamillc.com/sitemap.xml
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
