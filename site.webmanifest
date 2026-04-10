@@ -1,0 +1,27 @@
+{
+  "name": "Al Hamidiyah General Trading LLC",
+  "short_name": "HAMI LLC",
+  "description": "Leading project sourcing partner for Marine, Offshore, Land and Hospitality sectors in the UAE and GCC.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0a2647",
+  "icons": [
+    {
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
