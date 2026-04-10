@@ -27,20 +27,21 @@
             name: 'Self Tapping Screw (Countersunk Head) DIN7982 SS304',
             brand: 'Taiwan',
             category: 'engineering',
-            price: 0.65,
+            price: 65.00,
+            unit: '/Box',
             image: 'images/Product_Images/Self_tapping_Screws_1.jpeg',
             images: [
                 'images/Product_Images/Self_tapping_Screws_1.jpeg',
                 'images/Product_Images/Self_tapping_Screws_2.jpeg',
                 'images/Product_Images/Self_tapping_Screws_3.jpeg'
             ],
-            description: 'DIN7982 stainless steel countersunk head self tapping screws used for marine, engineering and fabrication installations.',
+            description: 'DIN7982 stainless steel countersunk head self tapping screws used for marine, engineering and fabrication installations. Sold per box of 100 pcs.',
             material: 'SS304 Stainless Steel',
             origin: 'Taiwan',
             sizes: [
-                { size: '#12 x 4 inch',   price: 0.65 },
-                { size: '#12 x 3 inch',   price: 0.50 },
-                { size: '#12 x 2.5 inch', price: 0.35 }
+                { size: '#12 x 4 inch',   price: 65.00, unit: '/Box' },
+                { size: '#12 x 3 inch',   price: 50.00, unit: '/Box' },
+                { size: '#12 x 2.5 inch', price: 35.00, unit: '/Box' }
             ]
         },
         {
@@ -171,7 +172,7 @@
                     <label class="shop-size-option${i === 0 ? ' selected' : ''}">
                         <input type="radio" name="size-${product.id}" value="${i}" ${i === 0 ? 'checked' : ''}>
                         <span class="shop-size-label">${s.size}</span>
-                        <span class="shop-size-price">AED ${s.price.toFixed(2)}</span>
+                        <span class="shop-size-price">AED ${s.price.toFixed(2)}${s.unit || ''}</span>
                     </label>
                 `).join('');
                 sizeHTML = `<div class="shop-product-size" data-product="${product.id}">${radios}</div>`;
@@ -179,6 +180,7 @@
 
             // --- Price display ---
             const displayPrice = isVariable ? product.sizes[0].price : product.price;
+            const displayUnit  = isVariable ? (product.sizes[0].unit || '') : (product.unit || '');
 
             return `
             <div class="shop-product-card animate-on-scroll" data-id="${product.id}">
@@ -190,7 +192,7 @@
                     </div>
                     <p class="shop-product-desc">${descHTML}</p>
                     ${sizeHTML}
-                    <div class="shop-product-price" id="price-${product.id}">AED ${displayPrice.toFixed(2)}</div>
+                    <div class="shop-product-price" id="price-${product.id}">AED ${displayPrice.toFixed(2)}${displayUnit}</div>
                     <div class="shop-product-actions">
                         <button class="shop-add-btn" onclick="HAMI_Cart.addToCart(${product.id})" id="addBtn-${product.id}">
                             <i class="fas fa-cart-plus"></i> Add to Cart
@@ -280,7 +282,7 @@
                 var selected = product.sizes[idx];
                 // Update displayed price
                 var priceEl = document.getElementById('price-' + productId);
-                if (priceEl) priceEl.textContent = 'AED ' + selected.price.toFixed(2);
+                if (priceEl) priceEl.textContent = 'AED ' + selected.price.toFixed(2) + (selected.unit || '');
                 // Highlight selected option
                 container.querySelectorAll('.shop-size-option').forEach(function (opt) {
                     opt.classList.remove('selected');
