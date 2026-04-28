@@ -171,8 +171,7 @@
                 const radios = product.sizes.map((s, i) => `
                     <label class="shop-size-option${i === 0 ? ' selected' : ''}">
                         <input type="radio" name="size-${product.id}" value="${i}" ${i === 0 ? 'checked' : ''}>
-                        <span class="shop-size-label">${s.size}</span>
-                        <span class="shop-size-price">AED ${s.price.toFixed(2)}${s.unit || ''}</span>
+                        <span class="shop-size-label">${s.size}${s.unit && s.unit.toLowerCase().includes('box') ? ' — Per Box' : (s.unit ? ' ' + s.unit : '')}</span>
                     </label>
                 `).join('');
                 sizeHTML = `<div class="shop-product-size" data-product="${product.id}">${radios}</div>`;
@@ -192,7 +191,6 @@
                     </div>
                     <p class="shop-product-desc">${descHTML}</p>
                     ${sizeHTML}
-                    <div class="shop-product-price" id="price-${product.id}">AED ${displayPrice.toFixed(2)}${displayUnit}</div>
                     <div class="shop-product-actions">
                         <button class="shop-add-btn" onclick="HAMI_Cart.addToCart(${product.id})" id="addBtn-${product.id}">
                             <i class="fas fa-cart-plus"></i> Add to Cart
@@ -280,9 +278,6 @@
                 if (!product || !product.sizes) return;
                 var idx = parseInt(e.target.value, 10);
                 var selected = product.sizes[idx];
-                // Update displayed price
-                var priceEl = document.getElementById('price-' + productId);
-                if (priceEl) priceEl.textContent = 'AED ' + selected.price.toFixed(2) + (selected.unit || '');
                 // Highlight selected option
                 container.querySelectorAll('.shop-size-option').forEach(function (opt) {
                     opt.classList.remove('selected');
@@ -504,7 +499,6 @@
 
         // Build items HTML
         const itemsHTML = cart.map(item => {
-            const lineTotal = item.product.price * item.quantity;
             return `
                 <div class="cart-item" data-id="${item.product.id}">
                     <div class="cart-item-img">
@@ -512,7 +506,6 @@
                     </div>
                     <div class="cart-item-info">
                         <h6>${item.product.name}</h6>
-                        <span class="cart-item-price">AED ${item.product.price.toFixed(2)}</span>
                         <div class="cart-qty-controls">
                             <button onclick="HAMI_Cart.updateQty(${item.product.id}, -1)" aria-label="Decrease quantity">
                                 <i class="fas fa-minus"></i>
@@ -522,7 +515,6 @@
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
-                        <div class="cart-item-total">Line total: AED ${lineTotal.toFixed(2)}</div>
                     </div>
                     <button class="cart-item-remove" onclick="HAMI_Cart.removeFromCart(${item.product.id})" aria-label="Remove item">
                         <i class="fas fa-trash-alt"></i>
@@ -535,10 +527,6 @@
         const existingItems = cartSidebarBody.querySelectorAll('.cart-item');
         existingItems.forEach(el => el.remove());
         cartSidebarBody.insertAdjacentHTML('beforeend', itemsHTML);
-
-        // Update subtotal
-        const subtotal = cart.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
-        if (cartSubtotalEl) cartSubtotalEl.textContent = 'AED ' + subtotal.toFixed(2);
     }
 
     /**
@@ -546,7 +534,6 @@
      */
     function updateCartUI() {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        const subtotal   = cart.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
 
         // Desktop toolbar badge
         const cartCountEl = document.getElementById('cartCount');
@@ -583,7 +570,7 @@
             if (totalItems > 0 && shopSectionVisible) {
                 cartBar.classList.add('visible');
                 if (cartBarText) {
-                    cartBarText.textContent = totalItems + (totalItems === 1 ? ' item' : ' items') + ' — AED ' + subtotal.toFixed(2);
+                    cartBarText.textContent = totalItems + (totalItems === 1 ? ' item' : ' items') + ' in cart';
                 }
             } else {
                 cartBar.classList.remove('visible');
@@ -617,17 +604,13 @@
         body += 'I would like to enquire about the following products:\n\n';
         body += '-----------------------------------------------\n';
 
-        let grandTotal = 0;
         cart.forEach((item, index) => {
-            const lineTotal = item.product.price * item.quantity;
-            grandTotal += lineTotal;
             body += `${index + 1}. ${item.product.name}\n`;
-            body += `   Qty: ${item.quantity}  |  Unit Price: AED ${item.product.price.toFixed(2)}  |  Subtotal: AED ${lineTotal.toFixed(2)}\n`;
+            body += `   Qty: ${item.quantity}\n`;
             body += '-----------------------------------------------\n';
         });
 
-        body += `\nGrand Total: AED ${grandTotal.toFixed(2)}\n\n`;
-        body += 'Please provide a formal quotation for the above items.\n\n';
+        body += '\nPlease provide a formal quotation for the above items.\n\n';
         body += 'Thank you.\n';
 
         const mailtoLink = `mailto:${ENQUIRY_EMAIL}?subject=${subject}&body=${encodeURIComponent(body)}`;
