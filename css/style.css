@@ -3104,6 +3104,13 @@ body.hamibot-active .back-to-top {
 
 .footer-credit-highlight {
     color: rgba(255, 255, 255, 0.65);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.footer-credit a.footer-credit-highlight:hover {
+    color: var(--orange-accent);
+    text-decoration: underline;
 }
 
 /* Service card accent borders (about.html HAMI stands for) */
